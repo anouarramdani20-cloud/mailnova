@@ -13,26 +13,16 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     color:#111827;
     background:#fff;
 }
 
-button,
-input,
-select,
-textarea{
-    font-family:inherit;
-}
-
-button{
-    cursor:pointer;
-}
+button,input,select,textarea{font-family:inherit;}
+button{cursor:pointer;}
 
 :root{
     --blue:#2563eb;
@@ -43,11 +33,7 @@ button{
     --border:#e5e7eb;
 }
 
-
-/* =========================
-   NAVBAR
-========================= */
-
+/* NAVBAR */
 .navbar{
     position:fixed;
     top:0;
@@ -55,7 +41,7 @@ button{
     width:100%;
     height:74px;
     background:rgba(255,255,255,.97);
-    border-bottom:1px solid #e5e7eb;
+    border-bottom:1px solid var(--border);
     z-index:9999;
 }
 
@@ -93,9 +79,7 @@ button{
     font-weight:700;
 }
 
-.nav-links button:hover{
-    color:var(--blue);
-}
+.nav-links button:hover{color:var(--blue);}
 
 .nav-contact{
     background:var(--blue)!important;
@@ -104,30 +88,24 @@ button{
     border-radius:8px;
 }
 
-.nav-contact:hover{
-    background:var(--blue-dark)!important;
-}
+.nav-contact:hover{background:var(--blue-dark)!important;}
 
-
-/* =========================
-   PÁGINAS
-========================= */
-
+/* PÁGINAS */
 .page{
     display:none;
     padding-top:74px;
     min-height:100vh;
 }
 
-.page.active{
-    display:block;
+.page.active{display:block;}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
 }
 
-
-/* =========================
-   INICIO
-========================= */
-
+/* HERO */
 .hero{
     min-height:700px;
     display:flex;
@@ -135,12 +113,6 @@ button{
     background:
         radial-gradient(circle at 85% 25%,rgba(37,99,235,.12),transparent 30%),
         linear-gradient(135deg,#f8fbff,#fff);
-}
-
-.container{
-    width:92%;
-    max-width:1200px;
-    margin:auto;
 }
 
 .hero-container{
@@ -153,14 +125,15 @@ button{
     align-items:center;
 }
 
-.hero-label{
+.hero-label,.section-label,.internal-label{
     color:var(--blue);
     font-size:11px;
     font-weight:800;
     letter-spacing:2px;
     text-transform:uppercase;
-    margin-bottom:18px;
 }
+
+.hero-label{margin-bottom:18px;}
 
 .hero h1{
     font-size:65px;
@@ -169,9 +142,7 @@ button{
     margin-bottom:25px;
 }
 
-.hero h1 span{
-    color:var(--blue);
-}
+.hero h1 span{color:var(--blue);}
 
 .hero-description{
     max-width:620px;
@@ -218,11 +189,9 @@ button{
     color:var(--blue);
 }
 
-
-/* HERO PANEL */
-
+/* PANEL */
 .hero-panel{
-    background:white;
+    background:#fff;
     border:1px solid var(--border);
     border-radius:22px;
     padding:32px;
@@ -236,10 +205,6 @@ button{
     padding-bottom:22px;
     border-bottom:1px solid var(--border);
     margin-bottom:20px;
-}
-
-.hero-panel-header strong{
-    font-size:17px;
 }
 
 .status{
@@ -256,9 +221,7 @@ button{
     border-bottom:1px solid #f1f5f9;
 }
 
-.campaign:last-child{
-    border-bottom:none;
-}
+.campaign:last-child{border-bottom:none;}
 
 .campaign-top{
     display:flex;
@@ -266,14 +229,8 @@ button{
     margin-bottom:8px;
 }
 
-.campaign-top strong{
-    font-size:13px;
-}
-
-.campaign-top span{
-    color:var(--gray);
-    font-size:12px;
-}
+.campaign-top strong{font-size:13px;}
+.campaign-top span{color:var(--gray);font-size:12px;}
 
 .progress{
     height:6px;
@@ -288,11 +245,7 @@ button{
     background:var(--blue);
 }
 
-
-/* =========================
-   SERVICIOS INICIO
-========================= */
-
+/* SECCIONES */
 .section{
     padding:100px 20px;
 }
@@ -300,14 +253,6 @@ button{
 .section-header{
     max-width:700px;
     margin-bottom:50px;
-}
-
-.section-label{
-    color:var(--blue);
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:2px;
-    text-transform:uppercase;
 }
 
 .section-header h2{
@@ -359,11 +304,7 @@ button{
     line-height:1.6;
 }
 
-
-/* =========================
-   CTA
-========================= */
-
+/* CTA */
 .cta{
     background:var(--dark);
     color:#fff;
@@ -391,27 +332,11 @@ button{
     max-width:620px;
 }
 
-
-/* =========================
-   CABECERAS INTERNAS
-========================= */
-
+/* CABECERAS */
 .internal-header{
     background:var(--dark);
-    color:white;
+    color:#fff;
     padding:90px 20px;
-}
-
-.internal-header .container{
-    max-width:1100px;
-}
-
-.internal-label{
-    color:#60a5fa;
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:2px;
-    text-transform:uppercase;
 }
 
 .internal-header h1{
@@ -428,11 +353,7 @@ button{
     line-height:1.7;
 }
 
-
-/* =========================
-   EMPRESA
-========================= */
-
+/* EMPRESA */
 .company{
     padding:90px 20px 110px;
 }
@@ -465,9 +386,7 @@ button{
     border-radius:15px;
 }
 
-.value h3{
-    margin-bottom:10px;
-}
+.value h3{margin-bottom:10px;}
 
 .value p{
     color:var(--gray);
@@ -475,14 +394,94 @@ button{
     line-height:1.6;
 }
 
-
-/* =========================
-   PROYECTO
-========================= */
-
+/* PROYECTO */
 .project{
     background:#f8fafc;
     padding:80px 20px 110px;
+}
+
+/* BLOQUE DE ACCESO */
+.project-lock{
+    min-height:520px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.lock-box{
+    width:100%;
+    max-width:520px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:50px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(15,23,42,.08);
+}
+
+.lock-icon{
+    width:70px;
+    height:70px;
+    margin:0 auto 22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eff6ff;
+    color:var(--blue);
+    border-radius:50%;
+    font-size:32px;
+}
+
+.lock-box h2{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.lock-box p{
+    color:var(--gray);
+    line-height:1.6;
+    margin-bottom:28px;
+}
+
+.password-form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.password-form input{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #dbe1ea;
+    border-radius:8px;
+    outline:none;
+    font-size:15px;
+}
+
+.password-form input:focus{
+    border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(37,99,235,.10);
+}
+
+.password-error{
+    display:none;
+    color:#dc2626;
+    background:#fef2f2;
+    border:1px solid #fecaca;
+    padding:10px;
+    border-radius:8px;
+    font-size:13px;
+}
+
+.password-error.active{display:block;}
+
+/* CONTENIDO PRIVADO */
+.project-content{
+    display:none;
+}
+
+.project-content.unlocked{
+    display:block;
 }
 
 .budget{
@@ -493,7 +492,7 @@ button{
 }
 
 .budget-card{
-    background:white;
+    background:#fff;
     border:1px solid var(--border);
     border-radius:16px;
     padding:28px;
@@ -506,9 +505,7 @@ button{
     margin-bottom:8px;
 }
 
-.budget-card strong{
-    font-size:29px;
-}
+.budget-card strong{font-size:29px;}
 
 .project-title{
     font-size:28px;
@@ -539,12 +536,10 @@ button{
     font-size:13px;
 }
 
-
 /* CRM */
-
 .crm{
     background:var(--dark);
-    color:white;
+    color:#fff;
     border-radius:20px;
     padding:38px;
     margin-bottom:60px;
@@ -577,9 +572,7 @@ button{
     font-weight:700;
 }
 
-
 /* FACTURA */
-
 .invoice{
     background:#fff;
     border:1px solid var(--border);
@@ -594,27 +587,21 @@ button{
     border-bottom:1px solid var(--border);
 }
 
-.invoice-top strong{
-    font-size:19px;
-}
+.invoice-top strong{font-size:19px;}
 
 .invoice table{
     width:100%;
     border-collapse:collapse;
 }
 
-.invoice th,
-.invoice td{
+.invoice th,.invoice td{
     padding:15px 22px;
     border-bottom:1px solid #eef2f7;
     font-size:14px;
     text-align:left;
 }
 
-.invoice th:last-child,
-.invoice td:last-child{
-    text-align:right;
-}
+.invoice th:last-child,.invoice td:last-child{text-align:right;}
 
 .invoice th{
     background:#f8fafc;
@@ -626,11 +613,13 @@ button{
     font-weight:800;
 }
 
+.private-actions{
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:20px;
+}
 
-/* =========================
-   EQUIPO
-========================= */
-
+/* EQUIPO */
 .team{
     padding:90px 20px 110px;
 }
@@ -664,84 +653,83 @@ button{
     letter-spacing:1px;
 }
 
-.person h3{
-    margin:9px 0;
-}
+.person h3{margin:9px 0;}
 
 .person p{
     color:var(--gray);
     font-size:13px;
 }
 
-
-/* =========================
-   CONTACTO
-========================= */
-
+/* CONTACTO */
 .contact{
+    padding:90px 20px 110px;
     background:#f8fafc;
-    padding:80px 20px 110px;
-}
-
-.contact-options{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:22px;
-    max-width:1050px;
-    margin:0 auto 55px;
-}
-
-.contact-option{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:38px;
-}
-
-.contact-option small{
-    color:var(--blue);
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1.5px;
-}
-
-.contact-option h2{
-    margin:10px 0;
-    font-size:27px;
-}
-
-.contact-option p{
-    color:var(--gray);
-    font-size:14px;
-    line-height:1.7;
-    margin-bottom:24px;
 }
 
 .form-box{
     max-width:850px;
     margin:auto;
-    background:white;
+    background:#fff;
     border:1px solid var(--border);
     border-radius:20px;
-    padding:42px;
+    padding:40px;
 }
 
-.form-box h2{
-    font-size:29px;
-    margin-bottom:8px;
+.form-start{text-align:center;}
+
+.form-start h2{
+    font-size:30px;
+    margin-bottom:12px;
 }
 
-.form-box > p{
+.form-start p{
     color:var(--gray);
-    margin-bottom:28px;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+.form-choice{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.choice{
+    padding:30px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:#fff;
+    text-align:left;
+}
+
+.choice:hover{
+    border-color:#93c5fd;
+    box-shadow:0 10px 25px rgba(15,23,42,.06);
+}
+
+.choice h3{margin-bottom:8px;}
+
+.choice p{
+    color:var(--gray);
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:20px;
 }
 
 .form{
     display:none;
 }
 
-.form.active{
-    display:block;
+.form.active{display:block;}
+
+.form h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.form>p{
+    color:var(--gray);
+    margin-bottom:30px;
 }
 
 .form-row{
@@ -751,14 +739,14 @@ button{
 }
 
 .form-group{
-    margin-bottom:19px;
+    margin-bottom:20px;
 }
 
 .form-group label{
     display:block;
     font-size:13px;
     font-weight:700;
-    margin-bottom:7px;
+    margin-bottom:8px;
 }
 
 .form-group input,
@@ -772,145 +760,127 @@ button{
     font-size:14px;
 }
 
+.form-group textarea{resize:vertical;}
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus{
     border-color:var(--blue);
 }
 
-.form-group textarea{
-    resize:vertical;
-}
-
 .checkbox{
     display:flex;
+    gap:10px;
     align-items:flex-start;
-    gap:8px;
+    margin:20px 0;
     color:var(--gray);
-    font-size:12px;
-    margin-bottom:22px;
-}
-
-.form-note{
-    background:#eff6ff;
-    color:#1e40af;
-    padding:14px;
-    border-radius:8px;
     font-size:13px;
-    margin-bottom:25px;
+    line-height:1.5;
 }
 
 .success{
     display:none;
     text-align:center;
-    padding:45px 15px;
+    padding:40px 20px;
 }
 
-.success.active{
-    display:block;
-}
+.success.active{display:block;}
 
 .success-icon{
     width:60px;
     height:60px;
-    border-radius:50%;
-    background:#dcfce7;
-    color:#15803d;
+    margin:0 auto 18px;
     display:flex;
     align-items:center;
     justify-content:center;
-    margin:0 auto 18px;
-    font-size:27px;
-    font-weight:bold;
+    background:#dcfce7;
+    color:#15803d;
+    border-radius:50%;
+    font-size:28px;
+    font-weight:800;
 }
 
-
-/* =========================
-   MODAL EQUIPO
-========================= */
-
+/* MODAL */
 .modal{
     position:fixed;
     inset:0;
-    background:rgba(15,23,42,.75);
+    background:rgba(15,23,42,.65);
     display:none;
     align-items:center;
     justify-content:center;
-    z-index:10000;
     padding:20px;
+    z-index:10000;
 }
 
-.modal.active{
-    display:flex;
-}
+.modal.active{display:flex;}
 
 .modal-box{
-    background:#fff;
+    position:relative;
     width:100%;
-    max-width:580px;
+    max-width:500px;
+    background:#fff;
     border-radius:20px;
     padding:40px;
-    position:relative;
 }
 
 .close{
     position:absolute;
+    top:15px;
     right:18px;
-    top:18px;
-    width:38px;
-    height:38px;
     border:none;
-    border-radius:50%;
-    background:#f1f5f9;
-    font-size:23px;
+    background:none;
+    font-size:28px;
 }
 
 .modal-role{
     color:var(--blue);
-    font-size:10px;
+    font-size:11px;
     font-weight:800;
-    letter-spacing:1px;
     text-transform:uppercase;
+    letter-spacing:2px;
 }
 
 .modal-box h2{
-    font-size:31px;
-    margin:8px 0 15px;
+    font-size:30px;
+    margin:10px 0;
 }
 
-.modal-box > p{
+.modal-box>p{
     color:var(--gray);
     line-height:1.7;
+    margin-bottom:25px;
 }
 
 .modal-info{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:15px;
-    margin:25px 0;
+    margin-bottom:25px;
 }
 
 .modal-info div{
     background:#f8fafc;
-    padding:17px;
-    border-radius:9px;
+    padding:15px;
+    border-radius:10px;
+}
+
+.modal-info strong,
+.modal-info span{
+    display:block;
 }
 
 .modal-info strong{
-    display:block;
+    font-size:11px;
     color:var(--gray);
-    font-size:10px;
     margin-bottom:5px;
 }
 
+.modal-info span{font-weight:700;}
 
-/* =========================
-   FOOTER
-========================= */
-
+/* FOOTER */
 footer{
     background:var(--dark);
-    color:white;
+    color:#fff;
     padding:30px 20px;
 }
 
@@ -921,11 +891,11 @@ footer{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    gap:20px;
 }
 
 .footer-logo{
-    color:white;
-    font-size:21px;
+    font-size:22px;
     font-weight:800;
 }
 
@@ -934,26 +904,27 @@ footer{
     font-size:12px;
 }
 
+/* RESPONSIVE */
+@media(max-width:900px){
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1000px){
+    .nav-links{gap:12px;}
+    .nav-links button{font-size:12px;}
 
     .hero-container{
         grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .hero h1{font-size:48px;}
+
+    .services-grid,
+    .values,
+    .budget,
+    .equipment{
+        grid-template-columns:1fr 1fr;
     }
 
     .team-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .equipment{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .services-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
@@ -962,53 +933,52 @@ footer{
     }
 }
 
-@media(max-width:700px){
+@media(max-width:650px){
+
+    .navbar{height:auto;}
+
+    .nav-container{
+        flex-direction:column;
+        padding:15px 0;
+        gap:12px;
+    }
 
     .nav-links{
-        display:none;
+        flex-wrap:wrap;
+        justify-content:center;
     }
 
-    .hero{
-        padding:70px 20px;
-    }
+    .page{padding-top:125px;}
 
-    .hero h1{
-        font-size:44px;
+    .hero h1{font-size:40px;}
+
+    .section-header h2,
+    .internal-header h1{
+        font-size:34px;
     }
 
     .services-grid,
-    .equipment,
-    .team-grid,
+    .values,
     .budget,
-    .contact-options,
-    .values{
-        grid-template-columns:1fr;
-    }
-
-    .form-row{
+    .equipment,
+    .form-choice,
+    .form-row,
+    .team-grid{
         grid-template-columns:1fr;
     }
 
     .crm-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr;
     }
 
-    .cta-container{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .internal-header h1{
-        font-size:40px;
-    }
-
+    .lock-box,
     .form-box{
         padding:28px 20px;
     }
 
     .footer{
         flex-direction:column;
-        gap:10px;
+        text-align:center;
     }
 }
 </style>
@@ -1016,54 +986,53 @@ footer{
 
 <body>
 
-
-<!-- =====================================================
+<!-- =========================
      NAVBAR
-===================================================== -->
+========================= -->
 
 <nav class="navbar">
 
 <div class="nav-container">
 
 <button class="logo" onclick="showPage('inicio')">
-    Mailnova
+Mailnova
 </button>
 
 <ul class="nav-links">
 
 <li>
 <button onclick="showPage('inicio')">
-    Inicio
+Inicio
 </button>
 </li>
 
 <li>
 <button onclick="showPage('empresa')">
-    Empresa
+Empresa
 </button>
 </li>
 
 <li>
 <button onclick="showPage('servicios')">
-    Servicios
+Servicios
 </button>
 </li>
 
 <li>
-<button onclick="showPage('proyecto')">
-    Proyecto informático
+<button onclick="showProjectAccess()">
+🔒 Proyecto informático
 </button>
 </li>
 
 <li>
 <button onclick="showPage('equipo')">
-    Equipo
+Equipo
 </button>
 </li>
 
 <li>
 <button class="nav-contact" onclick="showPage('contacto')">
-    Trabajar con nosotros
+Trabajar con nosotros
 </button>
 </li>
 
@@ -1074,42 +1043,49 @@ footer{
 </nav>
 
 
-<!-- =====================================================
+<main>
+
+<!-- =========================
      INICIO
-===================================================== -->
+========================= -->
 
-<main id="inicio" class="page active">
+<section id="inicio" class="page active">
 
-<section class="hero">
+<div class="hero">
 
 <div class="hero-container">
 
 <div>
 
 <div class="hero-label">
-    Mailnova · Email Marketing
+MAILNOVA · EMAIL MARKETING
 </div>
 
 <h1>
-    Comunicación digital
-    <span>que conecta.</span>
+Email Marketing
+<span>que conecta.</span>
 </h1>
 
 <p class="hero-description">
-    Ayudamos a marcas y empresas a crear campañas de Email Marketing
-    profesionales, estratégicas y orientadas a resultados.
+Ayudamos a empresas a comunicarse mejor con sus clientes mediante campañas de Email Marketing, automatización, diseño y análisis de resultados.
 </p>
 
 <div class="hero-buttons">
 
-<button class="primary-button"
-onclick="showPage('contacto')">
-    Trabajar con Mailnova
+<button
+class="primary-button"
+onclick="showPage('contacto');openForm('cliente')">
+
+Quiero trabajar con Mailnova →
+
 </button>
 
-<button class="secondary-button"
+<button
+class="secondary-button"
 onclick="showPage('servicios')">
-    Descubrir nuestros servicios
+
+Ver servicios
+
 </button>
 
 </div>
@@ -1122,11 +1098,11 @@ onclick="showPage('servicios')">
 <div class="hero-panel-header">
 
 <strong>
-    Campañas de Mailnova
+Campañas Mailnova
 </strong>
 
 <span class="status">
-    ACTIVA
+ACTIVO
 </span>
 
 </div>
@@ -1149,12 +1125,12 @@ onclick="showPage('servicios')">
 <div class="campaign">
 
 <div class="campaign-top">
-<strong>Campaña promocional</strong>
-<span>67%</span>
+<strong>Automatización</strong>
+<span>74%</span>
 </div>
 
 <div class="progress">
-<span style="width:67%"></span>
+<span style="width:74%"></span>
 </div>
 
 </div>
@@ -1163,7 +1139,7 @@ onclick="showPage('servicios')">
 <div class="campaign">
 
 <div class="campaign-top">
-<strong>Automatización</strong>
+<strong>Segmentación</strong>
 <span>91%</span>
 </div>
 
@@ -1177,7 +1153,7 @@ onclick="showPage('servicios')">
 
 </div>
 
-</section>
+</div>
 
 
 <section class="section">
@@ -1187,17 +1163,15 @@ onclick="showPage('servicios')">
 <div class="section-header">
 
 <div class="section-label">
-    Qué hacemos
+QUÉ HACEMOS
 </div>
 
 <h2>
-    Email Marketing pensado para marcas.
+Una estrategia de Email Marketing completa.
 </h2>
 
 <p>
-    Nos encargamos de la estrategia, creatividad, campañas,
-    automatización y análisis para que cada comunicación
-    tenga un objetivo claro.
+Mailnova combina estrategia, creatividad, automatización y análisis para crear comunicaciones digitales profesionales.
 </p>
 
 </div>
@@ -1207,55 +1181,20 @@ onclick="showPage('servicios')">
 
 <div class="service">
 <div class="service-number">01</div>
-<h3>Email Marketing</h3>
-<p>
-Creamos campañas de correo adaptadas a los objetivos de cada marca.
-</p>
+<h3>Campañas</h3>
+<p>Planificación y creación de campañas de Email Marketing adaptadas a cada empresa.</p>
 </div>
-
 
 <div class="service">
 <div class="service-number">02</div>
-<h3>Diseño</h3>
-<p>
-Diseñamos newsletters y contenidos visuales profesionales.
-</p>
+<h3>Automatización</h3>
+<p>Procesos automatizados para enviar el mensaje adecuado en el momento adecuado.</p>
 </div>
-
 
 <div class="service">
 <div class="service-number">03</div>
-<h3>Automatización</h3>
-<p>
-Automatizamos procesos para mejorar la comunicación con los clientes.
-</p>
-</div>
-
-
-<div class="service">
-<div class="service-number">04</div>
-<h3>Segmentación</h3>
-<p>
-Organizamos los contactos para enviar mensajes relevantes.
-</p>
-</div>
-
-
-<div class="service">
-<div class="service-number">05</div>
 <h3>Análisis</h3>
-<p>
-Medimos los resultados y buscamos oportunidades de mejora.
-</p>
-</div>
-
-
-<div class="service">
-<div class="service-number">06</div>
-<h3>Gestión completa</h3>
-<p>
-Gestionamos todo el proceso de Email Marketing de una marca.
-</p>
+<p>Seguimiento de métricas para conocer el funcionamiento de cada campaña.</p>
 </div>
 
 </div>
@@ -1272,54 +1211,55 @@ Gestionamos todo el proceso de Email Marketing de una marca.
 <div>
 
 <h2>
-    ¿Hablamos de tu próxima campaña?
+¿Quieres mejorar la comunicación con tus clientes?
 </h2>
 
 <p>
-    Cuéntanos qué necesita tu empresa y descubre cómo Mailnova
-    puede ayudarte a mejorar su comunicación digital.
+Cuéntanos qué necesita tu empresa y estudiaremos una propuesta de Email Marketing.
 </p>
 
 </div>
 
-<button class="primary-button"
-onclick="showPage('contacto')">
-    Contactar con Mailnova →
+<button
+class="primary-button"
+onclick="showPage('contacto');openForm('cliente')">
+
+Solicitar información →
+
 </button>
 
 </div>
 
 </section>
 
-</main>
+</section>
 
 
-<!-- =====================================================
+<!-- =========================
      EMPRESA
-===================================================== -->
+========================= -->
 
-<main id="empresa" class="page">
+<section id="empresa" class="page">
 
-<section class="internal-header">
+<header class="internal-header">
 
 <div class="container">
 
 <div class="internal-label">
-    MAILNOVA
+SOBRE MAILNOVA
 </div>
 
 <h1>
-    Una agencia enfocada en conectar marcas.
+Una agencia digital centrada en Email Marketing.
 </h1>
 
 <p>
-    Conoce nuestra filosofía y nuestra forma de trabajar
-    con empresas y marcas.
+Mailnova nace como una agencia especializada en ayudar a empresas a gestionar sus comunicaciones mediante Email Marketing.
 </p>
 
 </div>
 
-</section>
+</header>
 
 
 <section class="company">
@@ -1329,17 +1269,15 @@ onclick="showPage('contacto')">
 <div class="company-intro">
 
 <div class="section-label">
-    Nuestra empresa
+NUESTRA EMPRESA
 </div>
 
 <h2>
-    Comunicación digital con estrategia.
+Comunicación digital con estrategia.
 </h2>
 
 <p>
-    Mailnova es una empresa especializada en Email Marketing.
-    Trabajamos con otras empresas para planificar, diseñar,
-    gestionar y analizar campañas de correo electrónico.
+Trabajamos con campañas, newsletters, automatizaciones, segmentación y análisis de datos para ayudar a las empresas a mejorar su comunicación con sus clientes.
 </p>
 
 </div>
@@ -1348,44 +1286,18 @@ onclick="showPage('contacto')">
 <div class="values">
 
 <div class="value">
-
-<h3>
-    Estrategia
-</h3>
-
-<p>
-    Analizamos los objetivos de cada marca antes de crear
-    sus campañas.
-</p>
-
+<h3>Profesionalidad</h3>
+<p>Trabajamos con procesos organizados y herramientas digitales especializadas.</p>
 </div>
 
-
 <div class="value">
-
-<h3>
-    Creatividad
-</h3>
-
-<p>
-    Diseñamos comunicaciones profesionales y coherentes
-    con la identidad de cada empresa.
-</p>
-
+<h3>Estrategia</h3>
+<p>Cada campaña se plantea teniendo en cuenta los objetivos de comunicación.</p>
 </div>
 
-
 <div class="value">
-
-<h3>
-    Resultados
-</h3>
-
-<p>
-    Medimos las campañas para conocer su rendimiento
-    y detectar mejoras.
-</p>
-
+<h3>Análisis</h3>
+<p>Medimos los resultados para conocer el comportamiento de las campañas.</p>
 </div>
 
 </div>
@@ -1394,34 +1306,34 @@ onclick="showPage('contacto')">
 
 </section>
 
-</main>
+</section>
 
 
-<!-- =====================================================
+<!-- =========================
      SERVICIOS
-===================================================== -->
+========================= -->
 
-<main id="servicios" class="page">
+<section id="servicios" class="page">
 
-<section class="internal-header">
+<header class="internal-header">
 
 <div class="container">
 
 <div class="internal-label">
-    SERVICIOS
+SERVICIOS
 </div>
 
 <h1>
-    Soluciones para cada campaña.
+Servicios de Email Marketing.
 </h1>
 
 <p>
-    Desde la planificación hasta el análisis de resultados.
+Soluciones para planificar, crear, automatizar y analizar las comunicaciones digitales de una empresa.
 </p>
 
 </div>
 
-</section>
+</header>
 
 
 <section class="section">
@@ -1432,55 +1344,38 @@ onclick="showPage('contacto')">
 
 <div class="service">
 <div class="service-number">01</div>
-<h3>Email Marketing</h3>
-<p>
-Planificación y gestión de campañas de correo electrónico.
-</p>
+<h3>Campañas de Email</h3>
+<p>Diseñamos y planificamos campañas dirigidas a diferentes grupos de clientes.</p>
 </div>
-
 
 <div class="service">
 <div class="service-number">02</div>
-<h3>Diseño de newsletters</h3>
-<p>
-Diseño visual profesional adaptado a cada marca.
-</p>
+<h3>Newsletters</h3>
+<p>Creación de newsletters profesionales para mantener informados a los clientes.</p>
 </div>
-
 
 <div class="service">
 <div class="service-number">03</div>
-<h3>Campañas</h3>
-<p>
-Campañas promocionales, informativas y comerciales.
-</p>
+<h3>Automatización</h3>
+<p>Automatización de comunicaciones según diferentes acciones y situaciones.</p>
 </div>
-
 
 <div class="service">
 <div class="service-number">04</div>
-<h3>Automatización</h3>
-<p>
-Procesos automáticos para mejorar la comunicación.
-</p>
+<h3>Segmentación</h3>
+<p>Organización de contactos para realizar comunicaciones más relevantes.</p>
 </div>
-
 
 <div class="service">
 <div class="service-number">05</div>
-<h3>Segmentación</h3>
-<p>
-Organización de contactos según intereses y características.
-</p>
+<h3>Diseño</h3>
+<p>Diseño visual de newsletters y contenidos adaptados a cada marca.</p>
 </div>
-
 
 <div class="service">
 <div class="service-number">06</div>
 <h3>Análisis</h3>
-<p>
-Estudio de aperturas, clics y rendimiento de las campañas.
-</p>
+<p>Seguimiento de métricas y resultados de las campañas realizadas.</p>
 </div>
 
 </div>
@@ -1489,35 +1384,34 @@ Estudio de aperturas, clics y rendimiento de las campañas.
 
 </section>
 
-</main>
+</section>
 
 
-<!-- =====================================================
+<!-- =========================
      PROYECTO INFORMÁTICO
-===================================================== -->
+========================= -->
 
-<main id="proyecto" class="page">
+<section id="proyecto" class="page">
 
-<section class="internal-header">
+<header class="internal-header">
 
 <div class="container">
 
 <div class="internal-label">
-    PROYECTO INFORMÁTICO
+ÁREA PRIVADA
 </div>
 
 <h1>
-    Infraestructura informática de Mailnova.
+Proyecto informático.
 </h1>
 
 <p>
-    Equipamiento, programas y presupuesto necesario
-    para los cinco puestos de trabajo de la empresa.
+Información interna del proyecto informático de Mailnova.
 </p>
 
 </div>
 
-</section>
+</header>
 
 
 <section class="project">
@@ -1525,42 +1419,113 @@ Estudio de aperturas, clics y rendimiento de las campañas.
 <div class="container">
 
 
+<!-- BLOQUE DE CONTRASEÑA -->
+
+<div class="project-lock">
+
+<div class="lock-box">
+
+<div class="lock-icon">
+🔒
+</div>
+
+<h2>
+Área privada
+</h2>
+
+<p>
+Esta sección contiene información interna del proyecto informático de Mailnova. Introduce la contraseña para continuar.
+</p>
+
+<form
+class="password-form"
+onsubmit="unlockProject(event)">
+
+<input
+id="projectPassword"
+type="password"
+placeholder="Introduce la contraseña"
+autocomplete="current-password"
+required
+>
+
+<div
+id="projectError"
+class="password-error">
+
+Contraseña incorrecta. Inténtalo de nuevo.
+
+</div>
+
+<button
+class="primary-button"
+type="submit">
+
+Acceder al proyecto →
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- CONTENIDO PRIVADO -->
+
+<div
+id="projectContent"
+class="project-content">
+
+
+<div class="private-actions">
+
+<button
+class="secondary-button"
+onclick="lockProject()">
+
+🔒 Cerrar acceso
+
+</button>
+
+</div>
+
+
 <div class="budget">
 
 <div class="budget-card">
 
 <span>
-    Presupuesto disponible
+Presupuesto disponible
 </span>
 
 <strong>
-    6.000 €
+6.000 €
 </strong>
 
 </div>
 
-
 <div class="budget-card">
 
 <span>
-    Presupuesto utilizado
+Presupuesto utilizado
 </span>
 
 <strong>
-    3.070,20 €
+3.070,20 €
 </strong>
 
 </div>
 
-
 <div class="budget-card">
 
 <span>
-    Presupuesto restante
+Presupuesto restante
 </span>
 
 <strong>
-    2.929,80 €
+2.929,80 €
 </strong>
 
 </div>
@@ -1569,7 +1534,7 @@ Estudio de aperturas, clics y rendimiento de las campañas.
 
 
 <h2 class="project-title">
-    Equipamiento informático
+Equipamiento informático
 </h2>
 
 
@@ -1597,7 +1562,7 @@ Estudio de aperturas, clics y rendimiento de las campañas.
 
 <div class="equipment-card">
 <h3>Impresora</h3>
-<p>Brother DCP-L2627DWE · 160,36 €.</p>
+<p>Brother DCP-L2627DW · 160,36 €.</p>
 </div>
 
 <div class="equipment-card">
@@ -1623,42 +1588,23 @@ Estudio de aperturas, clics y rendimiento de las campañas.
 </div>
 
 
-<!-- ERP / CRM -->
-
 <div class="crm">
 
 <h2>
-    ERP / CRM de Email Marketing
+ERP / CRM de Email Marketing
 </h2>
 
 <p>
-    Mailnova utilizará una plataforma especializada para centralizar
-    la gestión de contactos, campañas y procesos de Email Marketing.
-    En el proyecto se propone Brevo como plataforma de gestión.
+Mailnova utilizará una plataforma especializada para centralizar la gestión de contactos, campañas y procesos de Email Marketing. En el proyecto se propone Brevo como plataforma de gestión.
 </p>
-
 
 <div class="crm-grid">
 
-<div class="crm-item">
-    Contactos
-</div>
-
-<div class="crm-item">
-    Campañas
-</div>
-
-<div class="crm-item">
-    Automatización
-</div>
-
-<div class="crm-item">
-    Segmentación
-</div>
-
-<div class="crm-item">
-    Estadísticas
-</div>
+<div class="crm-item">Contactos</div>
+<div class="crm-item">Campañas</div>
+<div class="crm-item">Automatización</div>
+<div class="crm-item">Segmentación</div>
+<div class="crm-item">Estadísticas</div>
 
 </div>
 
@@ -1666,7 +1612,7 @@ Estudio de aperturas, clics y rendimiento de las campañas.
 
 
 <h2 class="project-title">
-    Factura global
+Factura global
 </h2>
 
 
@@ -1675,11 +1621,11 @@ Estudio de aperturas, clics y rendimiento de las campañas.
 <div class="invoice-top">
 
 <strong>
-    Presupuesto Mailnova
+Presupuesto Mailnova
 </strong>
 
 <span>
-    Proyecto informático
+Proyecto informático
 </span>
 
 </div>
@@ -1690,17 +1636,11 @@ Estudio de aperturas, clics y rendimiento de las campañas.
 <thead>
 
 <tr>
-<th>
-    Concepto
-</th>
-
-<th>
-    Precio
-</th>
+<th>Concepto</th>
+<th>Precio</th>
 </tr>
 
 </thead>
-
 
 <tbody>
 
@@ -1755,15 +1695,8 @@ Estudio de aperturas, clics y rendimiento de las campañas.
 </tr>
 
 <tr class="total">
-
-<td>
-    TOTAL
-</td>
-
-<td>
-    3.070,20 €
-</td>
-
+<td>TOTAL</td>
+<td>3.070,20 €</td>
 </tr>
 
 </tbody>
@@ -1774,37 +1707,38 @@ Estudio de aperturas, clics y rendimiento de las campañas.
 
 </div>
 
+</div>
+
 </section>
 
-</main>
+</section>
 
 
-<!-- =====================================================
+<!-- =========================
      EQUIPO
-===================================================== -->
+========================= -->
 
-<main id="equipo" class="page">
+<section id="equipo" class="page">
 
-<section class="internal-header">
+<header class="internal-header">
 
 <div class="container">
 
 <div class="internal-label">
-    EQUIPO MAILNOVA
+EQUIPO
 </div>
 
 <h1>
-    Las personas detrás de cada campaña.
+Las personas detrás de Mailnova.
 </h1>
 
 <p>
-    Cinco perfiles especializados para gestionar cada parte
-    del trabajo de Mailnova.
+Un equipo organizado por áreas para gestionar las diferentes partes de cada proyecto.
 </p>
 
 </div>
 
-</section>
+</header>
 
 
 <section class="team">
@@ -1813,96 +1747,35 @@ Estudio de aperturas, clics y rendimiento de las campañas.
 
 <div class="team-grid">
 
-
-<div class="person"
-onclick="openPerson('direccion')">
-
-<div class="person-role">
-    Dirección
+<div class="person" onclick="openPerson('direccion')">
+<div class="person-role">Dirección</div>
+<h3>Carlos Martínez</h3>
+<p>Gestión y coordinación.</p>
 </div>
 
-<h3>
-    Carlos Martínez
-</h3>
-
-<p>
-    Gestión y coordinación de la empresa.
-</p>
-
+<div class="person" onclick="openPerson('email')">
+<div class="person-role">Email Marketing</div>
+<h3>Laura García</h3>
+<p>Campañas y automatización.</p>
 </div>
 
-
-<div class="person"
-onclick="openPerson('email')">
-
-<div class="person-role">
-    Email Marketing
+<div class="person" onclick="openPerson('diseno')">
+<div class="person-role">Diseño</div>
+<h3>Sofía Navarro</h3>
+<p>Diseño digital.</p>
 </div>
 
-<h3>
-    Laura García
-</h3>
-
-<p>
-    Estrategia y gestión de campañas.
-</p>
-
+<div class="person" onclick="openPerson('analisis')">
+<div class="person-role">Análisis</div>
+<h3>Daniel López</h3>
+<p>Datos y métricas.</p>
 </div>
 
-
-<div class="person"
-onclick="openPerson('diseno')">
-
-<div class="person-role">
-    Diseño
+<div class="person" onclick="openPerson('tecnico')">
+<div class="person-role">Técnico Digital</div>
+<h3>Álvaro Sánchez</h3>
+<p>Sistemas y tecnología.</p>
 </div>
-
-<h3>
-    Sofía Navarro
-</h3>
-
-<p>
-    Diseño de newsletters y contenidos.
-</p>
-
-</div>
-
-
-<div class="person"
-onclick="openPerson('analisis')">
-
-<div class="person-role">
-    Análisis
-</div>
-
-<h3>
-    Daniel López
-</h3>
-
-<p>
-    Métricas y resultados de campañas.
-</p>
-
-</div>
-
-
-<div class="person"
-onclick="openPerson('tecnico')">
-
-<div class="person-role">
-    Técnico Digital
-</div>
-
-<h3>
-    Álvaro Sánchez
-</h3>
-
-<p>
-    Herramientas y sistemas digitales.
-</p>
-
-</div>
-
 
 </div>
 
@@ -1910,58 +1783,62 @@ onclick="openPerson('tecnico')">
 
 </section>
 
-</main>
+</section>
 
 
-<!-- =====================================================
+<!-- =========================
      CONTACTO
-===================================================== -->
+========================= -->
 
-<main id="contacto" class="page">
+<section id="contacto" class="page">
 
-<section class="internal-header">
+<header class="internal-header">
 
 <div class="container">
 
 <div class="internal-label">
-    TRABAJA CON MAILNOVA
+CONTACTO
 </div>
 
 <h1>
-    Cuéntanos cómo podemos ayudarte.
+Trabajar con nosotros.
 </h1>
 
 <p>
-    Si eres una marca que necesita Email Marketing o quieres
-    formar parte de nuestro equipo, puedes contactar con nosotros.
+Si eres una empresa o quieres formar parte de Mailnova, puedes enviarnos tu solicitud.
 </p>
 
 </div>
 
-</section>
+</header>
 
 
 <section class="contact">
 
-<div class="container">
+<div class="form-box">
 
 
-<div class="contact-options">
-
-
-<div class="contact-option">
-
-<small>
-    PARA EMPRESAS Y MARCAS
-</small>
+<div id="formInicio" class="form-start">
 
 <h2>
-    Quiero hacer Email Marketing
+¿Cómo podemos ayudarte?
 </h2>
 
 <p>
-    Mi empresa necesita ayuda para crear, gestionar y analizar
-    campañas de Email Marketing.
+Selecciona una opción para enviar tu solicitud.
+</p>
+
+
+<div class="form-choice">
+
+<div class="choice">
+
+<h3>
+Soy una empresa
+</h3>
+
+<p>
+Quiero contratar servicios de Email Marketing para mi marca.
 </p>
 
 <button
@@ -1975,19 +1852,14 @@ Solicitar información →
 </div>
 
 
-<div class="contact-option">
+<div class="choice">
 
-<small>
-    PARA PROFESIONALES
-</small>
-
-<h2>
-    Quiero trabajar con Mailnova
-</h2>
+<h3>
+Quiero trabajar en Mailnova
+</h3>
 
 <p>
-    Quiero formar parte del equipo y trabajar en Dirección,
-    Email Marketing, Diseño, Análisis o Tecnología.
+Quiero enviar mi candidatura para formar parte del equipo.
 </p>
 
 <button
@@ -2000,110 +1872,63 @@ Enviar candidatura →
 
 </div>
 
+</div>
 
 </div>
 
 
-<div class="form-box">
+<!-- FORMULARIO CLIENTE -->
 
+<form
+id="formCliente"
+class="form"
+action="https://formspree.io/f/xgavjqrk"
+method="POST">
 
-<div id="formInicio">
+<input
+type="hidden"
+name="tipo_solicitud"
+value="Nueva solicitud de cliente - Mailnova"
+>
 
 <h2>
-    Contacta con Mailnova
+Solicitar Email Marketing
 </h2>
 
 <p>
-    Selecciona una de las opciones anteriores para comenzar.
+Cuéntanos qué necesita tu empresa.
 </p>
-
-</div>
-
-
-<!-- =========================
-     FORMULARIO CLIENTE
-========================= -->
-
-<form id="formCliente" class="form">
-
-<h2>
-    Tu proyecto de Email Marketing
-</h2>
-
-<p>
-    Cuéntanos qué necesita tu marca.
-</p>
-
-<div class="form-note">
-    Podemos ayudarte con campañas, newsletters,
-    automatizaciones, segmentación y análisis.
-</div>
 
 
 <div class="form-row">
 
 <div class="form-group">
 
-<label>
-    Nombre
-</label>
+<label>Nombre / Empresa</label>
 
 <input
 type="text"
-placeholder="Tu nombre"
-required
->
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-    Empresa / Marca
-</label>
-
-<input
-type="text"
+name="empresa"
 placeholder="Nombre de la empresa"
 required
 >
 
 </div>
 
-</div>
-
-
-<div class="form-row">
 
 <div class="form-group">
 
-<label>
-    Email
-</label>
+<label>Email</label>
 
 <input
 type="email"
-placeholder="empresa@email.com"
+name="email"
+placeholder="tu@email.com"
 required
 >
 
 </div>
 
-
-<div class="form-group">
-
-<label>
-    Teléfono
-</label>
-
-<input
-type="tel"
-placeholder="666 258 717"
->
-
-</div>
-
 </div>
 
 
@@ -2111,13 +1936,12 @@ placeholder="666 258 717"
 
 <div class="form-group">
 
-<label>
-    Página web
-</label>
+<label>Teléfono</label>
 
 <input
-type="url"
-placeholder="https://tuempresa.com"
+type="tel"
+name="telefono"
+placeholder="666 258 717"
 >
 
 </div>
@@ -2125,39 +1949,20 @@ placeholder="https://tuempresa.com"
 
 <div class="form-group">
 
-<label>
-    ¿Qué necesitas?
-</label>
+<label>Servicio</label>
 
-<select required>
+<select name="servicio" required>
 
 <option value="">
-Selecciona una opción
+Selecciona un servicio
 </option>
 
-<option>
-Gestión de Email Marketing
-</option>
-
-<option>
-Campañas de Email
-</option>
-
-<option>
-Newsletters
-</option>
-
-<option>
-Automatización
-</option>
-
-<option>
-Segmentación
-</option>
-
-<option>
-Análisis de campañas
-</option>
+<option>Email Marketing</option>
+<option>Campañas de Email</option>
+<option>Newsletters</option>
+<option>Automatización</option>
+<option>Segmentación</option>
+<option>Análisis de campañas</option>
 
 </select>
 
@@ -2169,10 +1974,11 @@ Análisis de campañas
 <div class="form-group">
 
 <label>
-    Cuéntanos sobre tu proyecto
+Cuéntanos sobre tu proyecto
 </label>
 
 <textarea
+name="mensaje"
 rows="6"
 placeholder="Explícanos qué necesita tu marca..."
 required
@@ -2185,6 +1991,8 @@ required
 
 <input
 type="checkbox"
+name="aceptacion"
+value="Acepto"
 required
 >
 
@@ -2206,18 +2014,26 @@ Enviar solicitud →
 </form>
 
 
-<!-- =========================
-     FORMULARIO TRABAJO
-========================= -->
+<!-- FORMULARIO TRABAJO -->
 
-<form id="formTrabajo" class="form">
+<form
+id="formTrabajo"
+class="form"
+action="https://formspree.io/f/xgavjqrk"
+method="POST">
+
+<input
+type="hidden"
+name="tipo_solicitud"
+value="Nueva candidatura de trabajo - Mailnova"
+>
 
 <h2>
-    Trabaja con Mailnova
+Trabaja con Mailnova
 </h2>
 
 <p>
-    Selecciona el área en la que te gustaría participar.
+Selecciona el área en la que te gustaría participar.
 </p>
 
 
@@ -2226,11 +2042,12 @@ Enviar solicitud →
 <div class="form-group">
 
 <label>
-    Nombre completo
+Nombre completo
 </label>
 
 <input
 type="text"
+name="nombre"
 placeholder="Tu nombre"
 required
 >
@@ -2241,11 +2058,12 @@ required
 <div class="form-group">
 
 <label>
-    Email
+Email
 </label>
 
 <input
 type="email"
+name="email"
 placeholder="tu@email.com"
 required
 >
@@ -2258,34 +2076,20 @@ required
 <div class="form-group">
 
 <label>
-    ¿En qué área quieres trabajar?
+¿En qué área quieres trabajar?
 </label>
 
-<select required>
+<select name="area" required>
 
 <option value="">
 Selecciona un área
 </option>
 
-<option>
-Dirección
-</option>
-
-<option>
-Email Marketing
-</option>
-
-<option>
-Diseño
-</option>
-
-<option>
-Análisis
-</option>
-
-<option>
-Técnico Digital
-</option>
+<option>Dirección</option>
+<option>Email Marketing</option>
+<option>Diseño</option>
+<option>Análisis</option>
+<option>Técnico Digital</option>
 
 </select>
 
@@ -2295,10 +2099,11 @@ Técnico Digital
 <div class="form-group">
 
 <label>
-    Experiencia y conocimientos
+Experiencia y conocimientos
 </label>
 
 <textarea
+name="experiencia"
 rows="5"
 placeholder="Cuéntanos qué sabes hacer..."
 required
@@ -2310,10 +2115,11 @@ required
 <div class="form-group">
 
 <label>
-    ¿Por qué quieres trabajar con Mailnova?
+¿Por qué quieres trabajar con Mailnova?
 </label>
 
 <textarea
+name="motivo"
 rows="5"
 placeholder="Cuéntanos un poco sobre ti..."
 required
@@ -2325,11 +2131,12 @@ required
 <div class="form-group">
 
 <label>
-    Portfolio o página profesional
+Portfolio o página profesional
 </label>
 
 <input
 type="url"
+name="portfolio"
 placeholder="https://..."
 >
 
@@ -2340,6 +2147,8 @@ placeholder="https://..."
 
 <input
 type="checkbox"
+name="aceptacion"
+value="Acepto"
 required
 >
 
@@ -2361,23 +2170,18 @@ Enviar candidatura →
 </form>
 
 
-<!-- =========================
-     MENSAJE DE ÉXITO
-========================= -->
-
 <div id="success" class="success">
 
 <div class="success-icon">
-    ✓
+✓
 </div>
 
 <h2>
-    Solicitud enviada
+Solicitud enviada
 </h2>
 
 <p>
-    Gracias por contactar con Mailnova.
-    Hemos recibido tu información correctamente.
+Gracias por contactar con Mailnova. Hemos recibido tu información correctamente.
 </p>
 
 <br>
@@ -2392,80 +2196,48 @@ Volver
 
 </div>
 
-
 </div>
 
-</div>
+</section>
 
 </section>
 
 </main>
 
 
-<!-- =====================================================
-     MODAL EQUIPO
-===================================================== -->
+<!-- MODAL EQUIPO -->
 
 <div id="personModal" class="modal">
 
 <div class="modal-box">
 
-<button
-class="close"
-onclick="closePerson()">
+<button class="close" onclick="closePerson()">×</button>
 
-×
-</button>
-
-
-<div
-class="modal-role"
-id="modalRole">
-
+<div class="modal-role" id="modalRole">
 Dirección
-
 </div>
-
 
 <h2 id="modalName">
 Carlos Martínez
 </h2>
 
-
 <p id="modalDescription">
 Coordina la empresa y mantiene la relación con los clientes.
 </p>
 
-
 <div class="modal-info">
 
 <div>
-
-<strong>
-Especialidad
-</strong>
-
-<span id="modalSpeciality">
-Gestión empresarial
-</span>
-
+<strong>Especialidad</strong>
+<span id="modalSpeciality">Gestión empresarial</span>
 </div>
-
 
 <div>
-
-<strong>
-Área
-</strong>
-
-<span id="modalArea">
-Dirección
-</span>
-
+<strong>Área</strong>
+<span id="modalArea">Dirección</span>
 </div>
 
 </div>
-
 
 <button
 class="primary-button"
@@ -2480,20 +2252,18 @@ Quiero trabajar con Mailnova →
 </div>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
 <div class="footer">
 
 <div class="footer-logo">
-    Mailnova
+Mailnova
 </div>
 
 <p>
-    © 2026 Mailnova · Proyecto académico
+© 2026 Mailnova · Proyecto académico
 </p>
 
 </div>
@@ -2504,25 +2274,202 @@ Quiero trabajar con Mailnova →
 <script>
 
 /* =========================
+   CONTRASEÑA PROYECTO
+========================= */
+
+/*
+   SHA-256 de:
+   Gerardomolina2026
+
+   La contraseña no aparece escrita
+   directamente en el código.
+*/
+
+const PROJECT_PASSWORD_HASH =
+"9f2eb2ee5dc289c633fe029e12aa4ff18551251012e6135131f918d338292996";
+
+
+async function sha256(value){
+
+    const data =
+        new TextEncoder().encode(value);
+
+    const hash =
+        await crypto.subtle.digest("SHA-256",data);
+
+    return Array.from(
+        new Uint8Array(hash)
+    )
+    .map(
+        byte =>
+        byte.toString(16).padStart(2,"0")
+    )
+    .join("");
+
+}
+
+
+function showProjectAccess(){
+
+    showPage("proyecto");
+
+    updateProjectAccess();
+
+    setTimeout(function(){
+
+        const input =
+            document.getElementById("projectPassword");
+
+        const content =
+            document.getElementById("projectContent");
+
+        if(
+            input &&
+            !content.classList.contains("unlocked")
+        ){
+
+            input.focus();
+
+        }
+
+    },300);
+
+}
+
+
+function updateProjectAccess(){
+
+    const unlocked =
+        sessionStorage.getItem(
+            "mailnovaProjectUnlocked"
+        ) === "true";
+
+    const content =
+        document.getElementById(
+            "projectContent"
+        );
+
+    const lock =
+        document.querySelector(
+            ".project-lock"
+        );
+
+    if(!content || !lock)return;
+
+    if(unlocked){
+
+        content.classList.add("unlocked");
+
+        lock.style.display="none";
+
+    }else{
+
+        content.classList.remove("unlocked");
+
+        lock.style.display="flex";
+
+    }
+
+}
+
+
+async function unlockProject(event){
+
+    event.preventDefault();
+
+    const input =
+        document.getElementById(
+            "projectPassword"
+        );
+
+    const error =
+        document.getElementById(
+            "projectError"
+        );
+
+    const password =
+        input.value;
+
+    const hash =
+        await sha256(password);
+
+    if(hash === PROJECT_PASSWORD_HASH){
+
+        sessionStorage.setItem(
+            "mailnovaProjectUnlocked",
+            "true"
+        );
+
+        error.classList.remove("active");
+
+        input.value="";
+
+        updateProjectAccess();
+
+        document
+        .getElementById("projectContent")
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    }else{
+
+        error.classList.add("active");
+
+        input.value="";
+
+        input.focus();
+
+    }
+
+}
+
+
+function lockProject(){
+
+    sessionStorage.removeItem(
+        "mailnovaProjectUnlocked"
+    );
+
+    updateProjectAccess();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================
    CAMBIAR DE PÁGINA
 ========================= */
 
 function showPage(page){
 
-    document.querySelectorAll(".page").forEach(function(p){
+    document
+    .querySelectorAll(".page")
+    .forEach(function(p){
+
         p.classList.remove("active");
+
     });
 
-    const selected = document.getElementById(page);
+    const selected =
+        document.getElementById(page);
 
     if(selected){
+
         selected.classList.add("active");
+
     }
 
     window.scrollTo({
         top:0,
         behavior:"smooth"
     });
+
 }
 
 
@@ -2577,25 +2524,41 @@ tecnico:{
 
 function openPerson(person){
 
-    const data = people[person];
+    const data =
+        people[person];
 
-    document.getElementById("modalRole").textContent = data.role;
+    document.getElementById(
+        "modalRole"
+    ).textContent=data.role;
 
-    document.getElementById("modalName").textContent = data.name;
+    document.getElementById(
+        "modalName"
+    ).textContent=data.name;
 
-    document.getElementById("modalDescription").textContent = data.description;
+    document.getElementById(
+        "modalDescription"
+    ).textContent=data.description;
 
-    document.getElementById("modalSpeciality").textContent = data.speciality;
+    document.getElementById(
+        "modalSpeciality"
+    ).textContent=data.speciality;
 
-    document.getElementById("modalArea").textContent = data.area;
+    document.getElementById(
+        "modalArea"
+    ).textContent=data.area;
 
-    document.getElementById("personModal").classList.add("active");
+    document.getElementById(
+        "personModal"
+    ).classList.add("active");
+
 }
 
 
 function closePerson(){
 
-    document.getElementById("personModal").classList.remove("active");
+    document
+    .getElementById("personModal")
+    .classList.remove("active");
 
 }
 
@@ -2621,83 +2584,183 @@ function goToWork(){
 
 function openForm(type){
 
-    document.getElementById("formInicio").style.display="none";
+    document.getElementById(
+        "formInicio"
+    ).style.display="none";
 
-    document.getElementById("formCliente").classList.remove("active");
+    document.getElementById(
+        "formCliente"
+    ).classList.remove("active");
 
-    document.getElementById("formTrabajo").classList.remove("active");
+    document.getElementById(
+        "formTrabajo"
+    ).classList.remove("active");
 
-    document.getElementById("success").classList.remove("active");
+    document.getElementById(
+        "success"
+    ).classList.remove("active");
+
 
     if(type==="cliente"){
-        document.getElementById("formCliente").classList.add("active");
+
+        document
+        .getElementById("formCliente")
+        .classList.add("active");
+
     }
 
     if(type==="trabajo"){
-        document.getElementById("formTrabajo").classList.add("active");
+
+        document
+        .getElementById("formTrabajo")
+        .classList.add("active");
+
     }
 
-    document.querySelector(".form-box").scrollIntoView({
+
+    document
+    .querySelector(".form-box")
+    .scrollIntoView({
         behavior:"smooth",
         block:"start"
     });
+
 }
 
 
 function resetForms(){
 
-    document.getElementById("formInicio").style.display="block";
+    document.getElementById(
+        "formInicio"
+    ).style.display="block";
 
-    document.getElementById("formCliente").classList.remove("active");
+    document.getElementById(
+        "formCliente"
+    ).classList.remove("active");
 
-    document.getElementById("formTrabajo").classList.remove("active");
+    document.getElementById(
+        "formTrabajo"
+    ).classList.remove("active");
 
-    document.getElementById("success").classList.remove("active");
+    document.getElementById(
+        "success"
+    ).classList.remove("active");
 
 }
 
 
 /* =========================
-   FORMULARIO CLIENTE
+   FORMULARIOS FORMSPREE
 ========================= */
 
-document.getElementById("formCliente").addEventListener("submit",function(e){
+async function sendForm(form){
 
-    e.preventDefault();
+    const button =
+        form.querySelector(
+            'button[type="submit"]'
+        );
 
-    this.style.display="none";
+    const originalText =
+        button.textContent;
 
-    document.getElementById("success").classList.add("active");
+    button.disabled=true;
+    button.textContent="Enviando...";
 
-});
+    try{
 
+        const response =
+            await fetch(
+                form.action,
+                {
+                    method:"POST",
+                    body:new FormData(form),
+                    headers:{
+                        "Accept":"application/json"
+                    }
+                }
+            );
 
-/* =========================
-   FORMULARIO TRABAJO
-========================= */
+        if(response.ok){
 
-document.getElementById("formTrabajo").addEventListener("submit",function(e){
+            form.reset();
 
-    e.preventDefault();
+            form.style.display="none";
 
-    this.style.display="none";
+            document
+            .getElementById("success")
+            .classList.add("active");
 
-    document.getElementById("success").classList.add("active");
+        }else{
 
-});
+            alert(
+                "No se ha podido enviar el formulario. Inténtalo de nuevo."
+            );
 
+        }
 
-/* =========================
-   CERRAR MODAL
-========================= */
+    }catch(error){
 
-document.getElementById("personModal").addEventListener("click",function(e){
+        alert(
+            "Ha ocurrido un error al enviar el formulario."
+        );
 
-    if(e.target === this){
-        closePerson();
     }
 
-});
+    button.disabled=false;
+    button.textContent=originalText;
+
+}
+
+
+document
+.getElementById("formCliente")
+.addEventListener(
+    "submit",
+    function(e){
+
+        e.preventDefault();
+
+        sendForm(this);
+
+    }
+);
+
+
+document
+.getElementById("formTrabajo")
+.addEventListener(
+    "submit",
+    function(e){
+
+        e.preventDefault();
+
+        sendForm(this);
+
+    }
+);
+
+
+/* CERRAR MODAL */
+
+document
+.getElementById("personModal")
+.addEventListener(
+    "click",
+    function(e){
+
+        if(e.target === this){
+
+            closePerson();
+
+        }
+
+    }
+);
+
+
+/* ESTADO INICIAL */
+
+updateProjectAccess();
 
 </script>
 
