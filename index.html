@@ -2,2286 +2,2682 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Mailnova | Email Marketing</title>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #111827;
-            background: #ffffff;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* =========================
-           NAVEGACIÓN
-        ========================= */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            height: 68px;
-            background: rgba(255,255,255,.96);
-            border-bottom: 1px solid #e5e7eb;
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 800;
-            color: #2563eb;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 14px;
-            font-weight: 700;
-            color: #374151;
-            transition: .2s;
-        }
-
-        .nav-links a:hover {
-            color: #2563eb;
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 650px;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #eff6ff, #ffffff);
-            padding: 80px 20px;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            width: 90%;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: 64px;
-            line-height: 1.05;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: #2563eb;
-        }
-
-        .hero p {
-            color: #64748b;
-            font-size: 19px;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        .hero-button {
-            display: inline-block;
-            padding: 15px 25px;
-            background: #2563eb;
-            color: white;
-            border-radius: 10px;
-            font-weight: 700;
-            transition: .2s;
-        }
-
-        .hero-button:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-        }
-
-        .hero-card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 25px;
-            padding: 45px;
-            box-shadow: 0 25px 60px rgba(15,23,42,.10);
-        }
-
-        .hero-card h3 {
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .hero-stat {
-            display: flex;
-            justify-content: space-between;
-            padding: 17px 0;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .hero-stat:last-child {
-            border-bottom: none;
-        }
-
-
-        /* =========================
-           SECCIONES
-        ========================= */
-
-        section {
-            padding: 100px 20px;
-        }
-
-        .section-container {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 55px;
-        }
-
-        .section-tag {
-            color: #2563eb;
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-        }
-
-        .section-header h2 {
-            font-size: 38px;
-            margin: 10px 0;
-        }
-
-        .section-header p {
-            color: #6b7280;
-        }
-
-
-        /* =========================
-           EMPRESA
-        ========================= */
-
-        .company {
-            background: #ffffff;
-        }
-
-        .company-text {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .company-text p {
-            color: #64748b;
-            font-size: 17px;
-            margin-bottom: 40px;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .stat {
-            padding: 30px;
-            background: #f8fafc;
-            border-radius: 18px;
-            text-align: center;
-        }
-
-        .stat strong {
-            display: block;
-            color: #2563eb;
-            font-size: 30px;
-            margin-bottom: 5px;
-        }
-
-        .stat span {
-            color: #64748b;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           SERVICIOS
-        ========================= */
-
-        .services {
-            background: #f8fafc;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 30px;
-            border: 1px solid #e5e7eb;
-            border-radius: 18px;
-            transition: .25s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(15,23,42,.08);
-        }
-
-        .service-icon {
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
-
-        .service-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            color: #64748b;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           PROYECTO INFORMÁTICO
-        ========================= */
-
-        .project {
-            background: #0f172a;
-            color: white;
-        }
-
-        .project .section-header p {
-            color: #94a3b8;
-        }
-
-        .budget-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 20px;
-            margin-bottom: 45px;
-        }
-
-        .budget-card {
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 18px;
-            border: 1px solid #334155;
-        }
-
-        .budget-card span {
-            display: block;
-            color: #94a3b8;
-            font-size: 13px;
-            margin-bottom: 8px;
-        }
-
-        .budget-card strong {
-            font-size: 32px;
-        }
-
-        .equipment-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 18px;
-            margin-bottom: 45px;
-        }
-
-        .equipment-card {
-            background: #ffffff;
-            color: #111827;
-            border-radius: 16px;
-            padding: 25px;
-        }
-
-        .equipment-card h3 {
-            margin-bottom: 8px;
-        }
-
-        .equipment-card p {
-            color: #64748b;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           ERP / CRM
-        ========================= */
-
-        .crm-box {
-            background: #ffffff;
-            color: #111827;
-            border-radius: 22px;
-            padding: 40px;
-            margin-bottom: 45px;
-        }
-
-        .crm-box h3 {
-            font-size: 27px;
-            margin-bottom: 10px;
-        }
-
-        .crm-box > p {
-            color: #64748b;
-            margin-bottom: 25px;
-        }
-
-        .crm-features {
-            display: grid;
-            grid-template-columns: repeat(5,1fr);
-            gap: 12px;
-        }
-
-        .crm-feature {
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-
-        /* =========================
-           TABLA
-        ========================= */
-
-        .invoice {
-            background: white;
-            color: #111827;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .invoice table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .invoice th,
-        .invoice td {
-            padding: 16px 20px;
-            border-bottom: 1px solid #e5e7eb;
-            text-align: left;
-        }
-
-        .invoice th {
-            background: #f8fafc;
-        }
-
-        .invoice td:last-child,
-        .invoice th:last-child {
-            text-align: right;
-        }
-
-        .invoice .total td {
-            font-size: 20px;
-            font-weight: 800;
-        }
-
-
-        /* =========================
-           EQUIPO
-        ========================= */
-
-        .team-section {
-            background: #f6f8fc;
-        }
-
-        .team-grid {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 18px;
-        }
-
-        .team-card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 18px;
-            padding: 30px 18px;
-            text-align: center;
-            cursor: pointer;
-            transition: all .25s ease;
-        }
-
-        .team-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 18px 40px rgba(15, 23, 42, .12);
-            border-color: #2563eb;
-        }
-
-        .team-icon {
-            font-size: 42px;
-            margin-bottom: 18px;
-        }
-
-        .team-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .team-card p {
-            font-size: 14px;
-            color: #64748b;
-        }
-
-        .team-link {
-            display: inline-block;
-            margin-top: 12px;
-            color: #2563eb;
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-
-        /* =========================
-           MODALES
-        ========================= */
-
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(15, 23, 42, .72);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content,
-        .form-content {
-            width: 100%;
-            max-width: 700px;
-            max-height: 90vh;
-            overflow-y: auto;
-            background: white;
-            border-radius: 24px;
-            padding: 45px;
-            position: relative;
-            box-shadow: 0 30px 80px rgba(0,0,0,.25);
-        }
-
-        .close-modal {
-            position: absolute;
-            right: 20px;
-            top: 18px;
-            border: none;
-            background: #f1f5f9;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .close-modal:hover {
-            background: #e2e8f0;
-        }
-
-        .profile-icon {
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
-
-        .profile-role {
-            color: #2563eb;
-            font-size: 13px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .modal-content h2 {
-            font-size: 34px;
-            margin: 8px 0 15px;
-        }
-
-        .modal-content > p {
-            color: #64748b;
-            line-height: 1.7;
-        }
-
-        .profile-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        .profile-info div {
-            background: #f8fafc;
-            padding: 18px;
-            border-radius: 12px;
-        }
-
-        .profile-info strong {
-            display: block;
-            font-size: 12px;
-            color: #64748b;
-            margin-bottom: 6px;
-        }
-
-        .profile-info span {
-            font-weight: 700;
-        }
-
-
-        /* =========================
-           BOTONES
-        ========================= */
-
-        .main-button {
-            border: none;
-            background: #2563eb;
-            color: white;
-            padding: 15px 24px;
-            border-radius: 10px;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 15px;
-            transition: .2s;
-        }
-
-        .main-button:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-        }
-
-
-        /* =========================
-           FORMULARIO
-        ========================= */
-
-        .form-content {
-            max-width: 750px;
-        }
-
-        .form-content h2 {
-            font-size: 34px;
-            margin: 10px 0;
-        }
-
-        .form-intro {
-            color: #64748b;
-            margin-bottom: 30px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 7px;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 13px 14px;
-            border: 1px solid #dbe1ea;
-            border-radius: 10px;
-            font-family: inherit;
-            font-size: 14px;
-            outline: none;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: #2563eb;
-        }
-
-        .checkbox {
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-            font-size: 13px;
-            color: #64748b;
-            margin-bottom: 25px;
-        }
-
-        .checkbox input {
-            margin-top: 4px;
-        }
-
-        .form-success {
-            display: none;
-            text-align: center;
-            padding: 35px 10px;
-        }
-
-        .success-icon {
-            width: 65px;
-            height: 65px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #dcfce7;
-            color: #16a34a;
-            border-radius: 50%;
-            font-size: 30px;
-            font-weight: bold;
-        }
-
-        .form-success h3 {
-            font-size: 25px;
-            margin: 15px 0 8px;
-        }
-
-        .form-success p {
-            color: #64748b;
-        }
-
-
-        /* =========================
-           CONTACTO
-        ========================= */
-
-        .contact {
-            background: white;
-        }
-
-        .contact-box {
-            max-width: 900px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .contact-card {
-            background: #f8fafc;
-            padding: 30px;
-            border-radius: 18px;
-            text-align: center;
-        }
-
-        .contact-card strong {
-            display: block;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .contact-card span {
-            color: #64748b;
-        }
-
-
-        /* =========================
-           LEGAL
-        ========================= */
-
-        .legal {
-            background: #f8fafc;
-        }
-
-        .legal-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 20px;
-        }
-
-        .legal-card {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-        }
-
-        .legal-card h3 {
-            margin-bottom: 8px;
-        }
-
-        .legal-card p {
-            color: #64748b;
-            font-size: 13px;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: #0f172a;
-            color: white;
-            padding: 35px 20px;
-            text-align: center;
-        }
-
-        footer p {
-            color: #94a3b8;
-            font-size: 13px;
-        }
-
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 1000px) {
-
-            .hero-container {
-                grid-template-columns: 1fr;
-            }
-
-            .team-grid {
-                grid-template-columns: repeat(2,1fr);
-            }
-
-            .stats {
-                grid-template-columns: repeat(2,1fr);
-            }
-
-            .service-grid,
-            .equipment-grid {
-                grid-template-columns: repeat(2,1fr);
-            }
-
-            .crm-features {
-                grid-template-columns: repeat(2,1fr);
-            }
-        }
-
-        @media (max-width: 700px) {
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 44px;
-            }
-
-            .budget-grid,
-            .service-grid,
-            .equipment-grid,
-            .legal-grid,
-            .contact-box {
-                grid-template-columns: 1fr;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-info {
-                grid-template-columns: 1fr;
-            }
-
-            .modal-content,
-            .form-content {
-                padding: 30px 22px;
-            }
-
-            .invoice {
-                overflow-x: auto;
-            }
-
-            .invoice table {
-                min-width: 650px;
-            }
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mailnova | Agencia de Email Marketing</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#111827;
+    background:#fff;
+    line-height:1.6;
+}
+
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root{
+    --blue:#2563eb;
+    --blue-dark:#1d4ed8;
+    --dark:#0f172a;
+    --gray:#64748b;
+    --light:#f8fafc;
+    --border:#e5e7eb;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:76px;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(226,232,240,.8);
+    z-index:9999;
+}
+
+.nav-container{
+    width:90%;
+    max-width:1250px;
+    height:100%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+    color:var(--blue);
+    letter-spacing:-1px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+    list-style:none;
+}
+
+.nav-links button{
+    border:none;
+    background:none;
+    color:#374151;
+    font-size:14px;
+    font-weight:700;
+    transition:.2s;
+}
+
+.nav-links button:hover{
+    color:var(--blue);
+}
+
+.nav-contact{
+    background:var(--blue)!important;
+    color:white!important;
+    padding:11px 18px;
+    border-radius:8px;
+}
+
+.nav-contact:hover{
+    background:var(--blue-dark)!important;
+}
+
+
+/* =====================================================
+   APP / PÁGINAS
+===================================================== */
+
+.page{
+    display:none;
+    padding-top:76px;
+    min-height:100vh;
+}
+
+.page.active{
+    display:block;
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+.hero{
+    min-height:720px;
+    display:flex;
+    align-items:center;
+    background:
+        radial-gradient(circle at 85% 30%,rgba(37,99,235,.10),transparent 30%),
+        linear-gradient(135deg,#f8fbff,#ffffff);
+}
+
+.hero-container{
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:90px;
+    align-items:center;
+}
+
+.hero-label{
+    color:var(--blue);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:68px;
+    line-height:1.02;
+    letter-spacing:-3px;
+    max-width:760px;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:var(--blue);
+}
+
+.hero-description{
+    color:var(--gray);
+    font-size:18px;
+    max-width:620px;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.primary-button{
+    background:var(--blue);
+    color:white;
+    border:none;
+    padding:15px 24px;
+    border-radius:9px;
+    font-size:14px;
+    font-weight:700;
+    transition:.2s;
+}
+
+.primary-button:hover{
+    background:var(--blue-dark);
+    transform:translateY(-2px);
+}
+
+.secondary-button{
+    background:white;
+    color:#111827;
+    border:1px solid #dbe1ea;
+    padding:14px 24px;
+    border-radius:9px;
+    font-size:14px;
+    font-weight:700;
+    transition:.2s;
+}
+
+.secondary-button:hover{
+    border-color:var(--blue);
+    color:var(--blue);
+}
+
+.hero-visual{
+    position:relative;
+}
+
+.hero-panel{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:24px;
+    padding:35px;
+    box-shadow:0 30px 70px rgba(15,23,42,.10);
+}
+
+.hero-panel-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-bottom:25px;
+    border-bottom:1px solid var(--border);
+    margin-bottom:25px;
+}
+
+.hero-panel-title{
+    font-weight:800;
+    font-size:18px;
+}
+
+.status{
+    color:#16a34a;
+    background:#dcfce7;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:800;
+}
+
+.campaign{
+    padding:17px 0;
+    border-bottom:1px solid #f1f5f9;
+}
+
+.campaign:last-child{
+    border-bottom:none;
+}
+
+.campaign-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:7px;
+}
+
+.campaign strong{
+    font-size:14px;
+}
+
+.campaign span{
+    font-size:12px;
+    color:var(--gray);
+}
+
+.progress{
+    height:6px;
+    background:#e5e7eb;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.progress span{
+    display:block;
+    height:100%;
+    background:var(--blue);
+}
+
+
+/* =====================================================
+   HOME - SERVICIOS
+===================================================== */
+
+.home-services{
+    padding:110px 20px;
+    background:white;
+}
+
+.container{
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+}
+
+.section-heading{
+    max-width:720px;
+    margin-bottom:55px;
+}
+
+.section-label{
+    color:var(--blue);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.section-heading h2{
+    font-size:42px;
+    letter-spacing:-1.5px;
+    margin:8px 0 14px;
+}
+
+.section-heading p{
+    color:var(--gray);
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service{
+    padding:32px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    transition:.25s;
+    background:white;
+}
+
+.service:hover{
+    transform:translateY(-5px);
+    border-color:#bfdbfe;
+    box-shadow:0 20px 45px rgba(15,23,42,.07);
+}
+
+.service-number{
+    color:#cbd5e1;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:30px;
+}
+
+.service h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.service p{
+    color:var(--gray);
+    font-size:14px;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.home-cta{
+    background:var(--dark);
+    color:white;
+    padding:100px 20px;
+}
+
+.cta-container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.cta-container h2{
+    font-size:40px;
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.cta-container p{
+    color:#94a3b8;
+    max-width:600px;
+}
+
+
+/* =====================================================
+   INTERNAL PAGE HEADER
+===================================================== */
+
+.internal-header{
+    background:var(--dark);
+    color:white;
+    padding:100px 20px;
+}
+
+.internal-header .container{
+    max-width:1100px;
+}
+
+.internal-label{
+    color:#60a5fa;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.internal-header h1{
+    font-size:52px;
+    line-height:1.1;
+    margin:10px 0 15px;
+    letter-spacing:-2px;
+}
+
+.internal-header p{
+    color:#94a3b8;
+    max-width:700px;
+    font-size:17px;
+}
+
+
+/* =====================================================
+   EMPRESA
+===================================================== */
+
+.company-page{
+    padding:90px 20px;
+}
+
+.company-intro{
+    max-width:850px;
+    margin-bottom:70px;
+}
+
+.company-intro h2{
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.company-intro p{
+    color:var(--gray);
+    font-size:17px;
+}
+
+.company-values{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.value-card{
+    padding:30px;
+    background:var(--light);
+    border-radius:16px;
+}
+
+.value-card h3{
+    margin-bottom:10px;
+}
+
+.value-card p{
+    color:var(--gray);
+    font-size:14px;
+}
+
+
+/* =====================================================
+   PROYECTO INFORMÁTICO
+===================================================== */
+
+.project-page{
+    background:#f8fafc;
+    padding:80px 20px 110px;
+}
+
+.project-summary{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-bottom:55px;
+}
+
+.summary-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:28px;
+}
+
+.summary-card span{
+    color:var(--gray);
+    font-size:12px;
+    display:block;
+    margin-bottom:8px;
+}
+
+.summary-card strong{
+    font-size:30px;
+}
+
+.project-section-title{
+    font-size:28px;
+    margin-bottom:25px;
+}
+
+.equipment-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-bottom:60px;
+}
+
+.equipment{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:25px;
+}
+
+.equipment h3{
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.equipment p{
+    color:var(--gray);
+    font-size:13px;
+}
+
+
+/* CRM */
+
+.crm{
+    background:var(--dark);
+    color:white;
+    border-radius:22px;
+    padding:40px;
+    margin-bottom:60px;
+}
+
+.crm h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.crm p{
+    color:#94a3b8;
+    max-width:800px;
+    margin-bottom:25px;
+}
+
+.crm-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+}
+
+.crm-item{
+    background:#1e293b;
+    padding:16px;
+    border-radius:9px;
+    text-align:center;
+    font-size:12px;
+    font-weight:700;
+}
+
+
+/* FACTURA */
+
+.invoice-wrapper{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.invoice-header{
+    padding:25px;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+}
+
+.invoice-header strong{
+    font-size:20px;
+}
+
+.invoice table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.invoice th,
+.invoice td{
+    padding:16px 22px;
+    border-bottom:1px solid #eef2f7;
+    text-align:left;
+    font-size:14px;
+}
+
+.invoice th:last-child,
+.invoice td:last-child{
+    text-align:right;
+}
+
+.invoice th{
+    background:#f8fafc;
+    color:#475569;
+}
+
+.invoice .total td{
+    font-size:19px;
+    font-weight:800;
+}
+
+
+/* =====================================================
+   EQUIPO
+===================================================== */
+
+.team-page{
+    padding:90px 20px 110px;
+}
+
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:16px;
+}
+
+.team-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:28px 20px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.team-card:hover{
+    border-color:#93c5fd;
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(15,23,42,.08);
+}
+
+.team-role{
+    color:var(--blue);
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.team-card h3{
+    margin:10px 0 8px;
+}
+
+.team-card p{
+    color:var(--gray);
+    font-size:13px;
+}
+
+
+/* =====================================================
+   CONTACTO
+===================================================== */
+
+.contact-page{
+    padding:90px 20px 120px;
+    background:#f8fafc;
+}
+
+.contact-choice{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    max-width:1000px;
+    margin:0 auto 70px;
+}
+
+.choice{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:40px;
+    transition:.25s;
+}
+
+.choice:hover{
+    border-color:#93c5fd;
+    box-shadow:0 20px 45px rgba(15,23,42,.08);
+}
+
+.choice-label{
+    color:var(--blue);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.5px;
+}
+
+.choice h2{
+    font-size:27px;
+    margin:10px 0;
+}
+
+.choice p{
+    color:var(--gray);
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+
+/* FORM */
+
+.form-box{
+    max-width:850px;
+    margin:auto;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:45px;
+}
+
+.form-box h2{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.form-box > p{
+    color:var(--gray);
+    margin-bottom:30px;
+}
+
+.form{
+    display:none;
+}
+
+.form.active{
+    display:block;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #dbe1ea;
+    border-radius:9px;
+    outline:none;
+    font-size:14px;
+}
+
+.form-group textarea{
+    resize:vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:var(--blue);
+}
+
+.form-note{
+    background:#eff6ff;
+    color:#1e40af;
+    padding:15px;
+    border-radius:9px;
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.checkbox{
+    display:flex;
+    gap:9px;
+    font-size:12px;
+    color:var(--gray);
+    margin-bottom:25px;
+}
+
+.form-success{
+    display:none;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.form-success.show{
+    display:block;
+}
+
+.success-circle{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#dcfce7;
+    color:#16a34a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0 auto 20px;
+    font-size:28px;
+    font-weight:800;
+}
+
+
+/* =====================================================
+   MODAL EQUIPO
+===================================================== */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(15,23,42,.75);
+    z-index:10000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    background:white;
+    width:100%;
+    max-width:600px;
+    border-radius:22px;
+    padding:40px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:18px;
+    top:18px;
+    width:38px;
+    height:38px;
+    border:none;
+    background:#f1f5f9;
+    border-radius:50%;
+    font-size:23px;
+}
+
+.modal-role{
+    color:var(--blue);
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.modal-box h2{
+    font-size:32px;
+    margin:8px 0 15px;
+}
+
+.modal-box p{
+    color:var(--gray);
+}
+
+.modal-info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin:25px 0;
+}
+
+.modal-info div{
+    padding:18px;
+    background:#f8fafc;
+    border-radius:10px;
+}
+
+.modal-info strong{
+    display:block;
+    font-size:11px;
+    color:var(--gray);
+    margin-bottom:5px;
+}
+
+.modal-info span{
+    font-weight:700;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:var(--dark);
+    color:white;
+    padding:35px 20px;
+}
+
+.footer-container{
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer-logo{
+    font-size:22px;
+    font-weight:800;
+}
+
+.footer-container p{
+    color:#94a3b8;
+    font-size:12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+    .hero-container{
+        grid-template-columns:1fr;
+    }
+
+    .team-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .equipment-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .crm-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:80px 20px;
+    }
+
+    .hero h1{
+        font-size:44px;
+    }
+
+    .services-grid,
+    .equipment-grid,
+    .team-grid,
+    .project-summary,
+    .contact-choice{
+        grid-template-columns:1fr;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .crm-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .cta-container{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .internal-header h1{
+        font-size:40px;
+    }
+
+    .form-box{
+        padding:28px 20px;
+    }
+
+    .footer-container{
+        flex-direction:column;
+        gap:12px;
+    }
+
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      NAVBAR
-========================= -->
+===================================================== -->
 
-<nav>
+<nav class="navbar">
 
-    <div class="nav-container">
+<div class="nav-container">
 
-        <a href="#inicio" class="logo">
-            Mailnova
-        </a>
+<button class="logo" onclick="showPage('home')">
+    Mailnova
+</button>
 
-        <ul class="nav-links">
+<ul class="nav-links">
 
-            <li>
-                <a href="#inicio">Inicio</a>
-            </li>
+<li>
+<button onclick="showPage('home')">
+    Inicio
+</button>
+</li>
 
-            <li>
-                <a href="#empresa">Empresa</a>
-            </li>
+<li>
+<button onclick="showPage('empresa')">
+    Empresa
+</button>
+</li>
 
-            <li>
-                <a href="#servicios">Servicios</a>
-            </li>
+<li>
+<button onclick="showPage('servicios')">
+    Servicios
+</button>
+</li>
 
-            <li>
-                <a href="#proyecto">Proyecto informático</a>
-            </li>
+<li>
+<button onclick="showPage('proyecto')">
+    Proyecto informático
+</button>
+</li>
 
-            <li>
-                <a href="#equipo">Equipo</a>
-            </li>
+<li>
+<button onclick="showPage('equipo')">
+    Equipo
+</button>
+</li>
 
-            <li>
-                <a href="#contacto">Contacto</a>
-            </li>
+<li>
+<button class="nav-contact" onclick="showPage('contacto')">
+    Trabajar con nosotros
+</button>
+</li>
 
-        </ul>
+</ul>
 
-    </div>
+</div>
 
 </nav>
 
 
-<!-- =========================
-     INICIO
-========================= -->
+<!-- =====================================================
+     PÁGINA INICIO
+===================================================== -->
 
-<section class="hero" id="inicio">
-
-    <div class="hero-container">
-
-        <div>
-
-            <span class="section-tag">
-                MAILNOVA · EMAIL MARKETING
-            </span>
-
-            <h1>
-                Comunicación digital
-                <span>que conecta.</span>
-            </h1>
-
-            <p>
-                Ayudamos a marcas y empresas a crear campañas de Email Marketing
-                profesionales, atractivas y orientadas a resultados.
-            </p>
-
-            <a href="#contacto" class="hero-button">
-                Contactar con Mailnova
-            </a>
-
-        </div>
+<main id="home" class="page active">
 
 
-        <div class="hero-card">
+<section class="hero">
 
-            <h3>
-                Mailnova en cifras
-            </h3>
+<div class="hero-container">
 
-            <div class="hero-stat">
-                <span>Profesionales</span>
-                <strong>5</strong>
-            </div>
 
-            <div class="hero-stat">
-                <span>Puestos de trabajo</span>
-                <strong>5</strong>
-            </div>
+<div>
 
-            <div class="hero-stat">
-                <span>Presupuesto disponible</span>
-                <strong>6.000 €</strong>
-            </div>
+<div class="hero-label">
+    Mailnova · Agencia de Email Marketing
+</div>
 
-            <div class="hero-stat">
-                <span>Área principal</span>
-                <strong>Email</strong>
-            </div>
+<h1>
+    Comunicación digital
+    <span>que conecta.</span>
+</h1>
 
-        </div>
+<p class="hero-description">
+    Diseñamos estrategias de Email Marketing que ayudan a las marcas
+    a comunicarse mejor con sus clientes y convertir cada campaña
+    en una oportunidad.
+</p>
 
-    </div>
+<div class="hero-buttons">
+
+<button class="primary-button" onclick="showPage('contacto')">
+    Trabajar con Mailnova
+</button>
+
+<button class="secondary-button" onclick="showPage('servicios')">
+    Conocer nuestros servicios
+</button>
+
+</div>
+
+</div>
+
+
+<div class="hero-visual">
+
+<div class="hero-panel">
+
+<div class="hero-panel-top">
+
+<div class="hero-panel-title">
+    Campaña en curso
+</div>
+
+<div class="status">
+    ACTIVA
+</div>
+
+</div>
+
+
+<div class="campaign">
+
+<div class="campaign-top">
+<strong>Newsletter mensual</strong>
+<span>82%</span>
+</div>
+
+<div class="progress">
+<span style="width:82%"></span>
+</div>
+
+</div>
+
+
+<div class="campaign">
+
+<div class="campaign-top">
+<strong>Campaña promocional</strong>
+<span>67%</span>
+</div>
+
+<div class="progress">
+<span style="width:67%"></span>
+</div>
+
+</div>
+
+
+<div class="campaign">
+
+<div class="campaign-top">
+<strong>Automatización</strong>
+<span>91%</span>
+</div>
+
+<div class="progress">
+<span style="width:91%"></span>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =========================
+<section class="home-services">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="section-label">
+    Qué hacemos
+</div>
+
+<h2>
+    Email Marketing pensado para marcas.
+</h2>
+
+<p>
+    Nos encargamos de la estrategia, creatividad, campañas y análisis
+    para que tu empresa pueda centrarse en hacer crecer su negocio.
+</p>
+
+</div>
+
+
+<div class="services-grid">
+
+
+<div class="service">
+<div class="service-number">01</div>
+<h3>Email Marketing</h3>
+<p>
+Creamos campañas de correo adaptadas a los objetivos de cada marca.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-number">02</div>
+<h3>Diseño de newsletters</h3>
+<p>
+Diseñamos comunicaciones visuales profesionales y coherentes con tu marca.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-number">03</div>
+<h3>Automatización</h3>
+<p>
+Creamos procesos automatizados para mejorar la comunicación con los clientes.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-number">04</div>
+<h3>Segmentación</h3>
+<p>
+Organizamos los contactos para enviar mensajes más relevantes.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-number">05</div>
+<h3>Análisis</h3>
+<p>
+Medimos los resultados para saber qué funciona y qué se puede mejorar.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-number">06</div>
+<h3>Gestión completa</h3>
+<p>
+Podemos encargarnos del proceso completo de Email Marketing de tu marca.
+</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="home-cta">
+
+<div class="cta-container">
+
+<div>
+
+<h2>
+¿Quieres mejorar la comunicación de tu marca?
+</h2>
+
+<p>
+Cuéntanos qué necesita tu empresa y estudiaremos cómo podemos ayudarte
+con una estrategia de Email Marketing.
+</p>
+
+</div>
+
+<button class="primary-button" onclick="showPage('contacto')">
+    Hablar con Mailnova →
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
      EMPRESA
-========================= -->
+===================================================== -->
 
-<section class="company" id="empresa">
+<main id="empresa" class="page">
 
-    <div class="section-container">
+<section class="internal-header">
 
-        <div class="section-header">
+<div class="container">
 
-            <span class="section-tag">
-                SOBRE NOSOTROS
-            </span>
+<div class="internal-label">
+    MAILNOVA
+</div>
 
-            <h2>
-                Una empresa digital enfocada en conectar marcas
-            </h2>
+<h1>
+    Una agencia creada para conectar marcas.
+</h1>
 
-        </div>
+<p>
+    Conoce nuestra forma de trabajar, nuestra filosofía y el enfoque
+    que aplicamos a cada proyecto de Email Marketing.
+</p>
 
-
-        <div class="company-text">
-
-            <p>
-                Mailnova es una empresa especializada en Email Marketing.
-                Nuestro objetivo es ayudar a otras empresas a comunicarse
-                con sus clientes mediante campañas digitales profesionales.
-            </p>
-
-
-            <div class="stats">
-
-                <div class="stat">
-                    <strong>5</strong>
-                    <span>Trabajadores</span>
-                </div>
-
-                <div class="stat">
-                    <strong>5</strong>
-                    <span>Puestos informáticos</span>
-                </div>
-
-                <div class="stat">
-                    <strong>6.000 €</strong>
-                    <span>Presupuesto</span>
-                </div>
-
-                <div class="stat">
-                    <strong>1</strong>
-                    <span>Plataforma Email Marketing</span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =========================
+<section class="company-page">
+
+<div class="container">
+
+<div class="company-intro">
+
+<div class="section-label">
+    Nuestra empresa
+</div>
+
+<h2>
+    Comunicación digital con una estrategia detrás.
+</h2>
+
+<p>
+    Mailnova es una empresa especializada en Email Marketing.
+    Trabajamos con otras empresas y marcas para planificar,
+    diseñar, gestionar y analizar sus campañas de correo electrónico.
+</p>
+
+</div>
+
+
+<div class="company-values">
+
+
+<div class="value-card">
+
+<h3>
+    Estrategia
+</h3>
+
+<p>
+    Antes de crear una campaña analizamos los objetivos de la marca
+    y el público al que quiere dirigirse.
+</p>
+
+</div>
+
+
+<div class="value-card">
+
+<h3>
+    Creatividad
+</h3>
+
+<p>
+    Buscamos que cada comunicación tenga una identidad visual
+    coherente y reconocible.
+</p>
+
+</div>
+
+
+<div class="value-card">
+
+<h3>
+    Resultados
+</h3>
+
+<p>
+    Analizamos el comportamiento de las campañas para identificar
+    oportunidades de mejora.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
      SERVICIOS
-========================= -->
+===================================================== -->
 
-<section class="services" id="servicios">
+<main id="servicios" class="page">
 
-    <div class="section-container">
+<section class="internal-header">
 
-        <div class="section-header">
+<div class="container">
 
-            <span class="section-tag">
-                SERVICIOS
-            </span>
+<div class="internal-label">
+    SERVICIOS
+</div>
 
-            <h2>
-                Lo que hacemos
-            </h2>
+<h1>
+    Todo lo que necesita una campaña profesional.
+</h1>
 
-            <p>
-                Soluciones digitales para mejorar la comunicación de las empresas.
-            </p>
+<p>
+    Desde la estrategia inicial hasta el análisis de resultados.
+</p>
 
-        </div>
-
-
-        <div class="service-grid">
-
-
-            <div class="service-card">
-
-                <div class="service-icon">✉️</div>
-
-                <h3>
-                    Email Marketing
-                </h3>
-
-                <p>
-                    Planificación y creación de campañas de correo electrónico
-                    adaptadas a cada empresa.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">🎨</div>
-
-                <h3>
-                    Diseño digital
-                </h3>
-
-                <p>
-                    Diseño de newsletters y contenidos visuales profesionales.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">📊</div>
-
-                <h3>
-                    Análisis
-                </h3>
-
-                <p>
-                    Análisis de resultados para conocer el rendimiento de las campañas.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">👥</div>
-
-                <h3>
-                    Gestión de clientes
-                </h3>
-
-                <p>
-                    Organización y gestión de contactos y clientes.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">⚡</div>
-
-                <h3>
-                    Automatización
-                </h3>
-
-                <p>
-                    Automatización de procesos y campañas de Email Marketing.
-                </p>
-
-            </div>
-
-
-            <div class="service-card">
-
-                <div class="service-icon">🚀</div>
-
-                <h3>
-                    Gestión profesional
-                </h3>
-
-                <p>
-                    Organización completa de las herramientas digitales necesarias.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =========================
+<section class="home-services">
+
+<div class="container">
+
+<div class="services-grid">
+
+
+<div class="service">
+<div class="service-number">01</div>
+<h3>Email Marketing</h3>
+<p>
+Planificamos y gestionamos campañas adaptadas a cada empresa.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-number">02</div>
+<h3>Diseño</h3>
+<p>
+Creamos newsletters y piezas visuales profesionales.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-number">03</div>
+<h3>Campañas</h3>
+<p>
+Gestionamos campañas promocionales, informativas y comerciales.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-number">04</div>
+<h3>Automatización</h3>
+<p>
+Configuramos procesos automáticos para mejorar la comunicación.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-number">05</div>
+<h3>Segmentación</h3>
+<p>
+Organizamos las bases de datos para mejorar la relevancia de los mensajes.
+</p>
+</div>
+
+
+<div class="service">
+<div class="service-number">06</div>
+<h3>Análisis</h3>
+<p>
+Estudiamos aperturas, clics y resultados de las campañas.
+</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
      PROYECTO INFORMÁTICO
-========================= -->
+===================================================== -->
 
-<section class="project" id="proyecto">
+<main id="proyecto" class="page">
 
-    <div class="section-container">
+<section class="internal-header">
 
-        <div class="section-header">
+<div class="container">
 
-            <span class="section-tag">
-                PROYECTO INFORMÁTICO
-            </span>
+<div class="internal-label">
+    PROYECTO INFORMÁTICO
+</div>
 
-            <h2>
-                Puesto informático de Mailnova
-            </h2>
+<h1>
+    La infraestructura de Mailnova.
+</h1>
 
-            <p>
-                Equipamiento seleccionado para los cinco trabajadores de la empresa.
-            </p>
+<p>
+    Equipamiento informático y programas seleccionados para el funcionamiento
+    de la empresa y sus cinco puestos de trabajo.
+</p>
 
-        </div>
-
-
-        <!-- PRESUPUESTO -->
-
-        <div class="budget-grid">
-
-            <div class="budget-card">
-                <span>Presupuesto disponible</span>
-                <strong>6.000 €</strong>
-            </div>
-
-            <div class="budget-card">
-                <span>Total utilizado</span>
-                <strong>3.070,20 €</strong>
-            </div>
-
-            <div class="budget-card">
-                <span>Presupuesto restante</span>
-                <strong>2.929,80 €</strong>
-            </div>
-
-        </div>
-
-
-        <!-- EQUIPAMIENTO -->
-
-        <div class="equipment-grid">
-
-
-            <div class="equipment-card">
-
-                <h3>
-                    💻 5 Ordenadores
-                </h3>
-
-                <p>
-                    GMKtec NucBox M5 Ultra · 419,99 € por unidad.
-                </p>
-
-            </div>
-
-
-            <div class="equipment-card">
-
-                <h3>
-                    🖥️ 5 Monitores
-                </h3>
-
-                <p>
-                    ASUS VA279HG 27" · 109,00 € por unidad.
-                </p>
-
-            </div>
-
-
-            <div class="equipment-card">
-
-                <h3>
-                    ⌨️ 5 Teclados
-                </h3>
-
-                <p>
-                    Logitech K120 · 14,99 € por unidad.
-                </p>
-
-            </div>
-
-
-            <div class="equipment-card">
-
-                <h3>
-                    🖱️ 5 Ratones
-                </h3>
-
-                <p>
-                    Logitech M171 · 9,99 € por unidad.
-                </p>
-
-            </div>
-
-
-            <div class="equipment-card">
-
-                <h3>
-                    🖨️ Impresora
-                </h3>
-
-                <p>
-                    Brother DCP-L2627DWE · 160,36 €.
-                </p>
-
-            </div>
-
-
-            <div class="equipment-card">
-
-                <h3>
-                    💾 Almacenamiento
-                </h3>
-
-                <p>
-                    SanDisk Portable SSD · 139,99 €.
-                </p>
-
-            </div>
-
-
-            <div class="equipment-card">
-
-                <h3>
-                    📊 LibreOffice Calc
-                </h3>
-
-                <p>
-                    Programa de hoja de cálculo · 0 €.
-                </p>
-
-            </div>
-
-
-            <div class="equipment-card">
-
-                <h3>
-                    📝 LibreOffice Writer
-                </h3>
-
-                <p>
-                    Procesador de textos · 0 €.
-                </p>
-
-            </div>
-
-
-            <div class="equipment-card">
-
-                <h3>
-                    🎨 GIMP
-                </h3>
-
-                <p>
-                    Programa de edición gráfica · 0 €.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- CRM -->
-
-        <div class="crm-box">
-
-            <h3>
-                ERP / CRM de Email Marketing
-            </h3>
-
-            <p>
-                Mailnova utilizará una plataforma especializada para centralizar
-                la gestión de contactos, campañas y procesos de Email Marketing.
-                En el proyecto se propone Brevo como plataforma de gestión.
-            </p>
-
-
-            <div class="crm-features">
-
-                <div class="crm-feature">
-                    👥 Contactos
-                </div>
-
-                <div class="crm-feature">
-                    ✉️ Campañas
-                </div>
-
-                <div class="crm-feature">
-                    ⚡ Automatización
-                </div>
-
-                <div class="crm-feature">
-                    🎯 Segmentación
-                </div>
-
-                <div class="crm-feature">
-                    📊 Estadísticas
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- FACTURA -->
-
-        <div class="invoice">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-                        <th>Concepto</th>
-                        <th>Precio</th>
-                    </tr>
-
-                </thead>
-
-
-                <tbody>
-
-                    <tr>
-                        <td>5 Ordenadores</td>
-                        <td>2.099,95 €</td>
-                    </tr>
-
-                    <tr>
-                        <td>5 Monitores</td>
-                        <td>545,00 €</td>
-                    </tr>
-
-                    <tr>
-                        <td>5 Teclados</td>
-                        <td>74,95 €</td>
-                    </tr>
-
-                    <tr>
-                        <td>5 Ratones</td>
-                        <td>49,95 €</td>
-                    </tr>
-
-                    <tr>
-                        <td>Impresora</td>
-                        <td>160,36 €</td>
-                    </tr>
-
-                    <tr>
-                        <td>Almacenamiento SSD</td>
-                        <td>139,99 €</td>
-                    </tr>
-
-                    <tr>
-                        <td>LibreOffice Calc</td>
-                        <td>0,00 €</td>
-                    </tr>
-
-                    <tr>
-                        <td>LibreOffice Writer</td>
-                        <td>0,00 €</td>
-                    </tr>
-
-                    <tr>
-                        <td>GIMP</td>
-                        <td>0,00 €</td>
-                    </tr>
-
-                    <tr>
-                        <td>ERP / CRM Email Marketing</td>
-                        <td>0,00 €</td>
-                    </tr>
-
-                    <tr class="total">
-
-                        <td>
-                            TOTAL
-                        </td>
-
-                        <td>
-                            3.070,20 €
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =========================
-     EQUIPO MAILNOVA
-========================= -->
+<section class="project-page">
 
-<section class="team-section" id="equipo">
+<div class="container">
 
-    <div class="section-header">
 
-        <span class="section-tag">
-            NUESTRO EQUIPO
-        </span>
+<div class="project-summary">
 
-        <h2>
-            Equipo Mailnova
-        </h2>
 
-        <p>
-            Cinco profesionales especializados para hacer crecer tu comunicación digital.
-        </p>
+<div class="summary-card">
 
-    </div>
+<span>
+    Presupuesto disponible
+</span>
 
-
-    <div class="team-grid">
-
-
-        <!-- DIRECCIÓN -->
-
-        <div class="team-card" onclick="abrirPerfil('direccion')">
-
-            <div class="team-icon">
-                👔
-            </div>
-
-            <h3>
-                Dirección
-            </h3>
-
-            <p>
-                Coordinación y gestión de la empresa.
-            </p>
-
-            <span class="team-link">
-                Ver perfil →
-            </span>
-
-        </div>
-
-
-        <!-- EMAIL MARKETING -->
-
-        <div class="team-card" onclick="abrirPerfil('email')">
-
-            <div class="team-icon">
-                ✉️
-            </div>
-
-            <h3>
-                Email Marketing
-            </h3>
-
-            <p>
-                Planificación y gestión de campañas.
-            </p>
-
-            <span class="team-link">
-                Ver perfil →
-            </span>
-
-        </div>
-
-
-        <!-- DISEÑO -->
-
-        <div class="team-card" onclick="abrirPerfil('diseno')">
-
-            <div class="team-icon">
-                🎨
-            </div>
-
-            <h3>
-                Diseño
-            </h3>
-
-            <p>
-                Creación de contenidos visuales.
-            </p>
-
-            <span class="team-link">
-                Ver perfil →
-            </span>
-
-        </div>
-
-
-        <!-- ANÁLISIS -->
-
-        <div class="team-card" onclick="abrirPerfil('analisis')">
-
-            <div class="team-icon">
-                📊
-            </div>
-
-            <h3>
-                Análisis
-            </h3>
-
-            <p>
-                Análisis del rendimiento de campañas.
-            </p>
-
-            <span class="team-link">
-                Ver perfil →
-            </span>
-
-        </div>
-
-
-        <!-- TÉCNICO -->
-
-        <div class="team-card" onclick="abrirPerfil('tecnico')">
-
-            <div class="team-icon">
-                ⚙️
-            </div>
-
-            <h3>
-                Técnico Digital
-            </h3>
-
-            <p>
-                Gestión de herramientas digitales.
-            </p>
-
-            <span class="team-link">
-                Ver perfil →
-            </span>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     MODAL PERFIL
-========================= -->
-
-<div id="perfilModal" class="modal">
-
-    <div class="modal-content">
-
-        <button class="close-modal" onclick="cerrarPerfil()">
-            ×
-        </button>
-
-
-        <div class="profile-icon" id="perfilIcono">
-            👔
-        </div>
-
-
-        <span class="profile-role" id="perfilPuesto">
-            Dirección
-        </span>
-
-
-        <h2 id="perfilNombre">
-            Carlos Martínez
-        </h2>
-
-
-        <p id="perfilDescripcion">
-            Coordina la empresa, organiza el trabajo del equipo
-            y mantiene la relación con los clientes.
-        </p>
-
-
-        <div class="profile-info">
-
-            <div>
-
-                <strong>
-                    Especialidad
-                </strong>
-
-                <span id="perfilEspecialidad">
-                    Gestión empresarial
-                </span>
-
-            </div>
-
-
-            <div>
-
-                <strong>
-                    Área
-                </strong>
-
-                <span id="perfilArea">
-                    Dirección
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <button class="main-button" onclick="abrirFormulario()">
-            Quiero trabajar con Mailnova
-        </button>
-
-    </div>
+<strong>
+    6.000 €
+</strong>
 
 </div>
 
 
-<!-- =========================
-     FORMULARIO
-========================= -->
-
-<div id="formularioModal" class="modal">
-
-    <div class="form-content">
-
-        <button class="close-modal" onclick="cerrarFormulario()">
-            ×
-        </button>
-
-
-        <span class="section-tag">
-            CONTACTA CON MAILNOVA
-        </span>
-
-
-        <h2>
-            Haz crecer tu Email Marketing
-        </h2>
-
-
-        <p class="form-intro">
-            Cuéntanos qué necesita tu marca y nuestro equipo se pondrá
-            en contacto contigo.
-        </p>
-
-
-        <form id="contactForm">
-
-
-            <div class="form-row">
-
-                <div class="form-group">
-
-                    <label>
-                        Nombre
-                    </label>
-
-                    <input
-                        type="text"
-                        placeholder="Tu nombre"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-                        Empresa / Marca
-                    </label>
-
-                    <input
-                        type="text"
-                        placeholder="Nombre de tu empresa"
-                        required
-                    >
-
-                </div>
-
-            </div>
-
-
-            <div class="form-row">
-
-                <div class="form-group">
-
-                    <label>
-                        Email
-                    </label>
-
-                    <input
-                        type="email"
-                        placeholder="tu@email.com"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-                        Teléfono
-                    </label>
-
-                    <input
-                        type="tel"
-                        placeholder="666 000 000"
-                    >
-
-                </div>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    ¿Qué necesitas?
-                </label>
-
-                <select required>
-
-                    <option value="">
-                        Selecciona una opción
-                    </option>
-
-                    <option>
-                        Crear campañas de Email Marketing
-                    </option>
-
-                    <option>
-                        Diseñar newsletters
-                    </option>
-
-                    <option>
-                        Automatizar campañas
-                    </option>
-
-                    <option>
-                        Gestionar contactos
-                    </option>
-
-                    <option>
-                        Analizar resultados
-                    </option>
-
-                    <option>
-                        Servicio completo de Email Marketing
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-                    Cuéntanos sobre tu proyecto
-                </label>
-
-                <textarea
-                    rows="5"
-                    placeholder="Explícanos qué necesita tu marca..."
-                    required
-                ></textarea>
-
-            </div>
-
-
-            <label class="checkbox">
-
-                <input type="checkbox" required>
-
-                <span>
-                    Acepto el tratamiento de mis datos para gestionar mi solicitud.
-                </span>
-
-            </label>
-
-
-            <button type="submit" class="main-button">
-                Enviar solicitud →
-            </button>
-
-
-        </form>
-
-
-        <!-- MENSAJE DE ÉXITO -->
-
-        <div id="formSuccess" class="form-success">
-
-            <div class="success-icon">
-                ✓
-            </div>
-
-            <h3>
-                Solicitud enviada
-            </h3>
-
-            <p>
-                Gracias por contactar con Mailnova.
-                Hemos recibido tu solicitud.
-            </p>
-
-        </div>
-
-
-    </div>
+<div class="summary-card">
+
+<span>
+    Presupuesto utilizado
+</span>
+
+<strong>
+    3.070,20 €
+</strong>
 
 </div>
 
 
-<!-- =========================
-     CONTACTO
-========================= -->
+<div class="summary-card">
 
-<section class="contact" id="contacto">
+<span>
+    Presupuesto restante
+</span>
 
-    <div class="section-container">
+<strong>
+    2.929,80 €
+</strong>
 
-        <div class="section-header">
-
-            <span class="section-tag">
-                CONTACTO
-            </span>
-
-            <h2>
-                Hablemos de tu proyecto
-            </h2>
-
-            <p>
-                Estamos preparados para ayudar a tu empresa con su Email Marketing.
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="contact-box">
-
-            <div class="contact-card">
-
-                <strong>
-                    📞 Teléfono
-                </strong>
-
-                <span>
-                    666 258 717
-                </span>
-
-            </div>
+</div>
 
 
-            <div class="contact-card">
+<h2 class="project-section-title">
+    Equipamiento
+</h2>
 
-                <strong>
-                    ✉️ Email
-                </strong>
 
-                <span>
-                    anouarramdani20@gmail.com
-                </span>
+<div class="equipment-grid">
 
-            </div>
 
-        </div>
+<div class="equipment">
+<h3>5 Ordenadores</h3>
+<p>GMKtec NucBox M5 Ultra · 419,99 € por unidad.</p>
+</div>
 
-    </div>
+
+<div class="equipment">
+<h3>5 Monitores</h3>
+<p>ASUS VA279HG 27" · 109,00 € por unidad.</p>
+</div>
+
+
+<div class="equipment">
+<h3>5 Teclados</h3>
+<p>Logitech K120 · 14,99 € por unidad.</p>
+</div>
+
+
+<div class="equipment">
+<h3>5 Ratones</h3>
+<p>Logitech M171 · 9,99 € por unidad.</p>
+</div>
+
+
+<div class="equipment">
+<h3>Impresora</h3>
+<p>Brother DCP-L2627DWE · 160,36 €.</p>
+</div>
+
+
+<div class="equipment">
+<h3>Almacenamiento SSD</h3>
+<p>SanDisk Portable SSD · 139,99 €.</p>
+</div>
+
+
+<div class="equipment">
+<h3>LibreOffice Calc</h3>
+<p>Programa de hoja de cálculo · 0 €.</p>
+</div>
+
+
+<div class="equipment">
+<h3>LibreOffice Writer</h3>
+<p>Procesador de textos · 0 €.</p>
+</div>
+
+
+<div class="equipment">
+<h3>GIMP</h3>
+<p>Programa de edición gráfica · 0 €.</p>
+</div>
+
+
+</div>
+
+
+<div class="crm">
+
+<h2>
+    ERP / CRM de Email Marketing
+</h2>
+
+<p>
+    Mailnova utilizará una plataforma especializada para centralizar
+    la gestión de contactos, campañas y procesos de Email Marketing.
+    En el proyecto se propone Brevo como plataforma de gestión.
+</p>
+
+
+<div class="crm-grid">
+
+<div class="crm-item">Contactos</div>
+<div class="crm-item">Campañas</div>
+<div class="crm-item">Automatización</div>
+<div class="crm-item">Segmentación</div>
+<div class="crm-item">Estadísticas</div>
+
+</div>
+
+</div>
+
+
+<h2 class="project-section-title">
+    Factura global
+</h2>
+
+
+<div class="invoice-wrapper">
+
+<div class="invoice-header">
+
+<strong>
+    Presupuesto Mailnova
+</strong>
+
+<span>
+    Proyecto informático
+</span>
+
+</div>
+
+
+<div class="invoice">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Concepto</th>
+<th>Precio</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>5 Ordenadores</td>
+<td>2.099,95 €</td>
+</tr>
+
+<tr>
+<td>5 Monitores</td>
+<td>545,00 €</td>
+</tr>
+
+<tr>
+<td>5 Teclados</td>
+<td>74,95 €</td>
+</tr>
+
+<tr>
+<td>5 Ratones</td>
+<td>49,95 €</td>
+</tr>
+
+<tr>
+<td>Impresora</td>
+<td>160,36 €</td>
+</tr>
+
+<tr>
+<td>Almacenamiento SSD</td>
+<td>139,99 €</td>
+</tr>
+
+<tr>
+<td>LibreOffice Calc</td>
+<td>0,00 €</td>
+</tr>
+
+<tr>
+<td>LibreOffice Writer</td>
+<td>0,00 €</td>
+</tr>
+
+<tr>
+<td>GIMP</td>
+<td>0,00 €</td>
+</tr>
+
+<tr>
+<td>ERP / CRM Email Marketing</td>
+<td>0,00 €</td>
+</tr>
+
+<tr class="total">
+
+<td>
+TOTAL
+</td>
+
+<td>
+3.070,20 €
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     EQUIPO
+===================================================== -->
+
+<main id="equipo" class="page">
+
+<section class="internal-header">
+
+<div class="container">
+
+<div class="internal-label">
+    EQUIPO MAILNOVA
+</div>
+
+<h1>
+    Las personas detrás de cada campaña.
+</h1>
+
+<p>
+    Un equipo con diferentes especialidades para cubrir todas las fases
+    de un proyecto de Email Marketing.
+</p>
+
+</div>
 
 </section>
 
 
-<!-- =========================
-     INFORMACIÓN LEGAL
-========================= -->
+<section class="team-page">
 
-<section class="legal">
+<div class="container">
 
-    <div class="section-container">
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                INFORMACIÓN
-            </span>
-
-            <h2>
-                Información legal
-            </h2>
-
-        </div>
+<div class="team-grid">
 
 
-        <div class="legal-grid">
+<div class="team-card" onclick="openTeam('direccion')">
+
+<div class="team-role">
+    Dirección
+</div>
+
+<h3>
+    Carlos Martínez
+</h3>
+
+<p>
+    Gestión y coordinación de la empresa.
+</p>
+
+</div>
 
 
-            <div class="legal-card">
+<div class="team-card" onclick="openTeam('email')">
 
-                <h3>
-                    Privacidad
-                </h3>
+<div class="team-role">
+    Email Marketing
+</div>
 
-                <p>
-                    Los datos introducidos en los formularios se utilizarían
-                    únicamente para gestionar las solicitudes de contacto.
-                </p>
+<h3>
+    Laura García
+</h3>
 
-            </div>
+<p>
+    Estrategia y gestión de campañas.
+</p>
 
-
-            <div class="legal-card">
-
-                <h3>
-                    Aviso legal
-                </h3>
-
-                <p>
-                    Mailnova es un proyecto académico desarrollado con fines educativos.
-                </p>
-
-            </div>
+</div>
 
 
-            <div class="legal-card">
+<div class="team-card" onclick="openTeam('diseno')">
 
-                <h3>
-                    Cookies
-                </h3>
+<div class="team-role">
+    Diseño
+</div>
 
-                <p>
-                    Esta página puede utilizar únicamente las tecnologías necesarias
-                    para su funcionamiento.
-                </p>
+<h3>
+    Sofía Navarro
+</h3>
 
-            </div>
+<p>
+    Diseño de newsletters y contenidos.
+</p>
+
+</div>
 
 
-        </div>
+<div class="team-card" onclick="openTeam('analisis')">
 
-    </div>
+<div class="team-role">
+    Análisis
+</div>
+
+<h3>
+    Daniel López
+</h3>
+
+<p>
+    Datos, métricas y resultados.
+</p>
+
+</div>
+
+
+<div class="team-card" onclick="openTeam('tecnico')">
+
+<div class="team-role">
+    Técnico Digital
+</div>
+
+<h3>
+    Álvaro Sánchez
+</h3>
+
+<p>
+    Herramientas y sistemas digitales.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     CONTACTO / TRABAJAR
+===================================================== -->
+
+<main id="contacto" class="page">
+
+<section class="internal-header">
+
+<div class="container">
+
+<div class="internal-label">
+    CONTACTO
+</div>
+
+<h1>
+    Trabaja con Mailnova.
+</h1>
+
+<p>
+    Tanto si eres una marca que necesita mejorar su Email Marketing
+    como si quieres formar parte de nuestro equipo, estamos interesados
+    en conocerte.
+</p>
+
+</div>
 
 </section>
 
 
-<!-- =========================
+<section class="contact-page">
+
+<div class="container">
+
+
+<div class="contact-choice">
+
+
+<div class="choice">
+
+<div class="choice-label">
+    PARA MARCAS
+</div>
+
+<h2>
+    Soy una empresa
+</h2>
+
+<p>
+    Necesito que Mailnova gestione las campañas de Email Marketing
+    de mi marca.
+</p>
+
+<button class="primary-button" onclick="showForm('cliente')">
+    Quiero trabajar mi Email Marketing →
+</button>
+
+</div>
+
+
+<div class="choice">
+
+<div class="choice-label">
+    PARA PROFESIONALES
+</div>
+
+<h2>
+    Quiero formar parte de Mailnova
+</h2>
+
+<p>
+    Quiero trabajar con el equipo y aportar mis conocimientos
+    a nuestros proyectos.
+</p>
+
+<button class="secondary-button" onclick="showForm('trabajo')">
+    Ver oportunidades →
+</button>
+
+</div>
+
+
+</div>
+
+
+<div class="form-box">
+
+
+<div id="form-selector">
+
+<h2>
+    Cuéntanos qué necesitas
+</h2>
+
+<p>
+    Selecciona una de las opciones anteriores para comenzar.
+</p>
+
+</div>
+
+
+<!-- FORMULARIO CLIENTE -->
+
+<form id="formCliente" class="form">
+
+<h2>
+    Proyecto de Email Marketing
+</h2>
+
+<p>
+    Cuéntanos qué necesita tu marca y prepararemos una propuesta.
+</p>
+
+
+<div class="form-note">
+    Trabajamos campañas, newsletters, automatizaciones,
+    segmentación y análisis de resultados.
+</div>
+
+
+<div class="form-row">
+
+
+<div class="form-group">
+
+<label>
+    Nombre
+</label>
+
+<input
+type="text"
+placeholder="Tu nombre"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Empresa / Marca
+</label>
+
+<input
+type="text"
+placeholder="Nombre de la empresa"
+required
+>
+
+</div>
+
+
+</div>
+
+
+<div class="form-row">
+
+
+<div class="form-group">
+
+<label>
+    Email
+</label>
+
+<input
+type="email"
+placeholder="empresa@email.com"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Teléfono
+</label>
+
+<input
+type="tel"
+placeholder="666 000 000"
+>
+
+</div>
+
+
+</div>
+
+
+<div class="form-row">
+
+
+<div class="form-group">
+
+<label>
+    Página web
+</label>
+
+<input
+type="url"
+placeholder="https://tuempresa.com"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Tipo de servicio
+</label>
+
+<select required>
+
+<option value="">
+Selecciona
+</option>
+
+<option>
+Gestión completa de Email Marketing
+</option>
+
+<option>
+Campañas promocionales
+</option>
+
+<option>
+Newsletters
+</option>
+
+<option>
+Automatización
+</option>
+
+<option>
+Segmentación
+</option>
+
+<option>
+Análisis de campañas
+</option>
+
+</select>
+
+</div>
+
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Cuéntanos sobre tu marca
+</label>
+
+<textarea
+rows="6"
+placeholder="¿Qué quieres conseguir con tus campañas?"
+required
+></textarea>
+
+</div>
+
+
+<label class="checkbox">
+
+<input type="checkbox" required>
+
+<span>
+Acepto el tratamiento de mis datos para gestionar mi solicitud.
+</span>
+
+</label>
+
+
+<button class="primary-button" type="submit">
+    Enviar proyecto →
+</button>
+
+</form>
+
+
+<!-- FORMULARIO TRABAJO -->
+
+<form id="formTrabajo" class="form">
+
+<h2>
+    Únete a Mailnova
+</h2>
+
+<p>
+    Cuéntanos en qué área te gustaría trabajar con nosotros.
+</p>
+
+
+<div class="form-row">
+
+
+<div class="form-group">
+
+<label>
+    Nombre completo
+</label>
+
+<input
+type="text"
+placeholder="Tu nombre"
+required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Email
+</label>
+
+<input
+type="email"
+placeholder="tu@email.com"
+required
+>
+
+</div>
+
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Área en la que quieres trabajar
+</label>
+
+<select required>
+
+<option value="">
+Selecciona un área
+</option>
+
+<option>
+Dirección
+</option>
+
+<option>
+Email Marketing
+</option>
+
+<option>
+Diseño
+</option>
+
+<option>
+Análisis
+</option>
+
+<option>
+Técnico Digital
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Experiencia o conocimientos
+</label>
+
+<textarea
+rows="5"
+placeholder="Cuéntanos qué sabes hacer..."
+required
+></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    ¿Por qué quieres formar parte de Mailnova?
+</label>
+
+<textarea
+rows="5"
+placeholder="Escribe unas palabras sobre ti..."
+required
+></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Portfolio o enlace profesional
+</label>
+
+<input
+type="url"
+placeholder="https://..."
+>
+
+</div>
+
+
+<label class="checkbox">
+
+<input type="checkbox" required>
+
+<span>
+Acepto el tratamiento de mis datos para gestionar mi solicitud.
+</span>
+
+</label>
+
+
+<button class="primary-button" type="submit">
+    Enviar candidatura →
+</button>
+
+</form>
+
+
+<!-- ÉXITO -->
+
+<div id="success" class="form-success">
+
+<div class="success-circle">
+    ✓
+</div>
+
+<h2>
+    Solicitud recibida
+</h2>
+
+<p>
+    Gracias por contactar con Mailnova.
+    Hemos recibido tu información correctamente.
+</p>
+
+<br>
+
+<button class="secondary-button" onclick="resetContact()">
+    Volver
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     MODAL EQUIPO
+===================================================== -->
+
+<div id="teamModal" class="modal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeTeam()">
+×
+</button>
+
+
+<div class="modal-role" id="modalRole">
+Dirección
+</div>
+
+<h2 id="modalName">
+Carlos Martínez
+</h2>
+
+<p id="modalDescription">
+Coordina la empresa y mantiene la relación con los clientes.
+</p>
+
+
+<div class="modal-info">
+
+<div>
+
+<strong>
+Especialidad
+</strong>
+
+<span id="modalSpeciality">
+Gestión empresarial
+</span>
+
+</div>
+
+
+<div>
+
+<strong>
+Área
+</strong>
+
+<span id="modalArea">
+Dirección
+</span>
+
+</div>
+
+</div>
+
+
+<button class="primary-button" onclick="showPage('contacto');closeTeam();showForm('trabajo')">
+    Quiero trabajar con Mailnova →
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
-    <p>
-        © 2026 Mailnova · Proyecto académico de Email Marketing
-    </p>
+<div class="footer-container">
+
+<div class="footer-logo">
+    Mailnova
+</div>
+
+<p>
+    © 2026 Mailnova · Proyecto académico de Email Marketing
+</p>
+
+</div>
 
 </footer>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
 
+/* =====================================================
+   CAMBIO DE PÁGINAS
+===================================================== */
 
-/* =================================
-   DATOS DE LAS 5 PERSONAS
-================================= */
+function showPage(page){
 
-const personas = {
+    document.querySelectorAll('.page').forEach(function(item){
+        item.classList.remove('active');
+    });
 
+    document.getElementById(page).classList.add('active');
 
-    direccion: {
-
-        nombre: "Carlos Martínez",
-
-        puesto: "Dirección",
-
-        icono: "👔",
-
-        descripcion:
-            "Coordina la empresa, organiza el trabajo del equipo y mantiene la relación con los clientes.",
-
-        especialidad:
-            "Gestión empresarial",
-
-        area:
-            "Dirección"
-
-    },
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    });
+}
 
 
-    email: {
+/* =====================================================
+   DATOS DEL EQUIPO
+===================================================== */
 
-        nombre: "Laura García",
+const team = {
 
-        puesto: "Email Marketing",
+direccion:{
+    role:"Dirección",
+    name:"Carlos Martínez",
+    description:"Coordina la empresa, organiza el trabajo del equipo y mantiene la relación con los clientes.",
+    speciality:"Gestión empresarial",
+    area:"Dirección"
+},
 
-        icono: "✉️",
+email:{
+    role:"Email Marketing",
+    name:"Laura García",
+    description:"Planifica y gestiona campañas de Email Marketing adaptadas a las necesidades de cada marca.",
+    speciality:"Email Marketing",
+    area:"Campañas"
+},
 
-        descripcion:
-            "Planifica, crea y gestiona campañas de Email Marketing adaptadas a cada marca.",
+diseno:{
+    role:"Diseño",
+    name:"Sofía Navarro",
+    description:"Diseña newsletters y contenidos visuales profesionales para las campañas de nuestros clientes.",
+    speciality:"Diseño digital",
+    area:"Contenido"
+},
 
-        especialidad:
-            "Email Marketing",
+analisis:{
+    role:"Análisis",
+    name:"Daniel López",
+    description:"Analiza los resultados de las campañas y estudia los datos para mejorar el rendimiento.",
+    speciality:"Analítica digital",
+    area:"Datos"
+},
 
-        area:
-            "Campañas y automatización"
-
-    },
-
-
-    diseno: {
-
-        nombre: "Sofía Navarro",
-
-        puesto: "Diseño",
-
-        icono: "🎨",
-
-        descripcion:
-            "Diseña newsletters y contenidos visuales para conseguir comunicaciones atractivas y profesionales.",
-
-        especialidad:
-            "Diseño digital",
-
-        area:
-            "Contenido visual"
-
-    },
-
-
-    analisis: {
-
-        nombre: "Daniel López",
-
-        puesto: "Análisis",
-
-        icono: "📊",
-
-        descripcion:
-            "Analiza los resultados de las campañas y estudia los datos para mejorar el rendimiento.",
-
-        especialidad:
-            "Analítica digital",
-
-        area:
-            "Datos y resultados"
-
-    },
-
-
-    tecnico: {
-
-        nombre: "Álvaro Sánchez",
-
-        puesto: "Técnico Digital",
-
-        icono: "⚙️",
-
-        descripcion:
-            "Gestiona las herramientas digitales, configuraciones y sistemas utilizados por Mailnova.",
-
-        especialidad:
-            "Tecnología digital",
-
-        area:
-            "Sistemas y herramientas"
-
-    }
+tecnico:{
+    role:"Técnico Digital",
+    name:"Álvaro Sánchez",
+    description:"Gestiona las herramientas, sistemas y configuraciones digitales utilizadas por Mailnova.",
+    speciality:"Tecnología",
+    area:"Sistemas digitales"
+}
 
 };
 
 
+/* =====================================================
+   ABRIR EQUIPO
+===================================================== */
 
-/* =================================
-   ABRIR PERFIL
-================================= */
+function openTeam(person){
 
-function abrirPerfil(persona) {
+    const data=team[person];
 
-    const datos = personas[persona];
+    document.getElementById("modalRole").textContent=data.role;
 
+    document.getElementById("modalName").textContent=data.name;
 
-    document.getElementById("perfilIcono").textContent =
-        datos.icono;
+    document.getElementById("modalDescription").textContent=data.description;
 
+    document.getElementById("modalSpeciality").textContent=data.speciality;
 
-    document.getElementById("perfilPuesto").textContent =
-        datos.puesto;
+    document.getElementById("modalArea").textContent=data.area;
 
-
-    document.getElementById("perfilNombre").textContent =
-        datos.nombre;
-
-
-    document.getElementById("perfilDescripcion").textContent =
-        datos.descripcion;
+    document.getElementById("teamModal").classList.add("active");
+}
 
 
-    document.getElementById("perfilEspecialidad").textContent =
-        datos.especialidad;
+function closeTeam(){
 
-
-    document.getElementById("perfilArea").textContent =
-        datos.area;
-
-
-    document.getElementById("perfilModal").classList.add("active");
+    document.getElementById("teamModal").classList.remove("active");
 
 }
 
 
+/* =====================================================
+   FORMULARIOS
+===================================================== */
 
-/* =================================
-   CERRAR PERFIL
-================================= */
+function showForm(type){
 
-function cerrarPerfil() {
+    document.getElementById("form-selector").style.display="none";
 
-    document
-        .getElementById("perfilModal")
-        .classList.remove("active");
+    document.getElementById("formCliente").classList.remove("active");
 
-}
+    document.getElementById("formTrabajo").classList.remove("active");
 
+    document.getElementById("success").classList.remove("show");
 
+    if(type==="cliente"){
 
-/* =================================
-   ABRIR FORMULARIO
-================================= */
+        document.getElementById("formCliente").classList.add("active");
 
-function abrirFormulario() {
+    }
 
-    cerrarPerfil();
+    if(type==="trabajo"){
 
-    document
-        .getElementById("formularioModal")
-        .classList.add("active");
+        document.getElementById("formTrabajo").classList.add("active");
 
-}
-
-
-
-/* =================================
-   CERRAR FORMULARIO
-================================= */
-
-function cerrarFormulario() {
-
-    document
-        .getElementById("formularioModal")
-        .classList.remove("active");
+    }
 
 }
 
 
+function resetContact(){
 
-/* =================================
-   CERRAR MODAL AL PULSAR FUERA
-================================= */
+    document.getElementById("form-selector").style.display="block";
 
-document
-    .getElementById("perfilModal")
-    .addEventListener("click", function(event) {
+    document.getElementById("formCliente").classList.remove("active");
 
-        if (event.target === this) {
+    document.getElementById("formTrabajo").classList.remove("active");
 
-            cerrarPerfil();
+    document.getElementById("success").classList.remove("show");
 
-        }
-
-    });
+}
 
 
+/* =====================================================
+   ENVÍO FORMULARIO CLIENTE
+===================================================== */
 
-document
-    .getElementById("formularioModal")
-    .addEventListener("click", function(event) {
+document.getElementById("formCliente").addEventListener("submit",function(e){
 
-        if (event.target === this) {
+    e.preventDefault();
 
-            cerrarFormulario();
+    this.style.display="none";
 
-        }
+    document.getElementById("success").classList.add("show");
 
-    });
-
-
-
-/* =================================
-   FORMULARIO
-================================= */
-
-document
-    .getElementById("contactForm")
-    .addEventListener("submit", function(event) {
-
-        event.preventDefault();
+});
 
 
-        this.style.display = "none";
+/* =====================================================
+   ENVÍO FORMULARIO TRABAJO
+===================================================== */
+
+document.getElementById("formTrabajo").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    this.style.display="none";
+
+    document.getElementById("success").classList.add("show");
+
+});
 
 
-        document
-            .querySelector(".form-intro")
-            .style.display = "none";
+/* =====================================================
+   CERRAR MODAL
+===================================================== */
 
+document.getElementById("teamModal").addEventListener("click",function(e){
 
-        document
-            .querySelector("#formularioModal .section-tag")
-            .style.display = "none";
+    if(e.target===this){
+        closeTeam();
+    }
 
-
-        document
-            .querySelector("#formularioModal h2")
-            .style.display = "none";
-
-
-        document
-            .getElementById("formSuccess")
-            .style.display = "block";
-
-    });
-
+});
 
 </script>
 
-
 </body>
-
 </html>
