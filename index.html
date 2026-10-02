@@ -1,1 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Mailnova | Agencia de Email Marketing</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f8fc;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    /* NAVEGACIÓN */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e8eaf0;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      color: #635bff;
+    }
+
+    .logo span {
+      color: #172033;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #394158;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #635bff;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 70px 7%;
+      background: linear-gradient(135deg, #eef0ff, #ffffff 55%, #f2f8ff);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e4e2ff;
+      color: #5148d9;
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #635bff;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      color: #596174;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #635bff;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(99,91,255,0.25);
+    }
+
+    .button.secondary {
+      background: white;
+      color: #635bff;
+      border: 1px solid #dcdcff;
+    }
+
+    /* SECCIONES */
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #697187;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* SERVICIOS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid #e7e9f0;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(20,25,50,0.08);
+    }
+
+    .icon {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #697187;
+    }
+
+    /* EQUIPAMIENTO */
+    #equipamiento {
+      background: #ffffff;
+    }
+
+    .equipment {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .equipment-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8f9fd;
+      border: 1px solid #e6e8f0;
+      padding: 20px;
+      border-radius: 14px;
+    }
+
+    .equipment-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .equipment-item small {
+      color: #70778a;
+    }
+
+    .price {
+      font-weight: 800;
+      color: #635bff;
+      white-space: nowrap;
+    }
+
+    /* PRESUPUESTO */
+    .budget-box {
+      max-width: 900px;
+      margin: auto;
+      background: #172033;
+      color: white;
+      padding: 45px;
+      border-radius: 25px;
+      text-align: center;
+    }
+
+    .budget-box h3 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .budget-number {
+      font-size: 60px;
+      font-weight: 900;
+      color: #9b95ff;
+      margin: 15px 0;
+    }
+
+    .budget-box p {
+      color: #c5cad8;
+    }
+
+    /* EQUIPO */
+    .team {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .person {
+      background: white;
+      padding: 25px 15px;
+      border-radius: 18px;
+      text-align: center;
+      border: 1px solid #e6e8f0;
+    }
+
+    .avatar {
+      width: 65px;
+      height: 65px;
+      background: #e7e5ff;
+      color: #635bff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .person p {
+      color: #747b8d;
+      font-size: 14px;
+    }
+
+    /* CONTACTO */
+    #contacto {
+      background: #eef0ff;
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact-box h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #626b7e;
+      margin-bottom: 25px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111827;
+      color: #c5cad8;
+      text-align: center;
+      padding: 30px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .team {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .cards,
+      .equipment,
+      .team {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+
+      section {
+        padding: 65px 5%;
+      }
+
+      .budget-number {
+        font-size: 45px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <nav>
+    <div class="logo">Mail<span>nova</span></div>
+
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#equipamiento">Equipamiento</a></li>
+      <li><a href="#presupuesto">Presupuesto</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- INICIO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+
+      <div class="tag">AGENCIA DE EMAIL MARKETING</div>
+
+      <h1>
+        Conectamos marcas con
+        <span>personas.</span>
+      </h1>
+
+      <p>
+        Mailnova es una agencia especializada en Email Marketing.
+        Diseñamos campañas, analizamos resultados y ayudamos a empresas
+        a comunicarse mejor con sus clientes.
+      </p>
+
+      <a href="#servicios" class="button">Conocer servicios</a>
+      <a href="#equipamiento" class="button secondary">Ver equipamiento</a>
+
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+
+    <div class="section-title">
+      <h2>Nuestros servicios</h2>
+      <p>
+        Soluciones digitales para ayudar a nuestros clientes a mejorar
+        su comunicación y sus campañas de Email Marketing.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">📧</div>
+        <h3>Campañas de Email</h3>
+        <p>
+          Creación y planificación de campañas de correo electrónico
+          adaptadas a cada cliente.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Diseño de contenido</h3>
+        <p>
+          Diseño de newsletters y contenidos visuales para conseguir
+          comunicaciones atractivas.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>Análisis de resultados</h3>
+        <p>
+          Estudiamos los resultados de las campañas para detectar
+          oportunidades de mejora.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3>Automatización</h3>
+        <p>
+          Automatización de procesos para mejorar la eficiencia de
+          las campañas.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">👥</div>
+        <h3>Gestión de clientes</h3>
+        <p>
+          Organización de información y seguimiento de diferentes
+          clientes y campañas.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💡</div>
+        <h3>Estrategia digital</h3>
+        <p>
+          Propuestas y estrategias para mejorar la comunicación digital
+          de las empresas.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EQUIPAMIENTO -->
+  <section id="equipamiento">
+
+    <div class="section-title">
+      <h2>Nuestro puesto informático</h2>
+      <p>
+        Equipamiento necesario para desarrollar el trabajo diario de
+        nuestra agencia.
+      </p>
+    </div>
+
+    <div class="equipment">
+
+      <div class="equipment-item">
+        <div>
+          <strong>💻 Ordenador</strong>
+          <small>Equipo principal de trabajo</small>
+        </div>
+        <span class="price">Pendiente</span>
+      </div>
+
+      <div class="equipment-item">
+        <div>
+          <strong>🖥️ Monitor</strong>
+          <small>Pantalla para trabajar cómodamente</small>
+        </div>
+        <span class="price">Pendiente</span>
+      </div>
+
+      <div class="equipment-item">
+        <div>
+          <strong>⌨️ Teclado</strong>
+          <small>Periférico de entrada</small>
+        </div>
+        <span class="price">Pendiente</span>
+      </div>
+
+      <div class="equipment-item">
+        <div>
+          <strong>🖱️ Ratón</strong>
+          <small>Periférico de navegación</small>
+        </div>
+        <span class="price">Pendiente</span>
+      </div>
+
+      <div class="equipment-item">
+        <div>
+          <strong>🖨️ Impresora</strong>
+          <small>Impresión de documentos</small>
+        </div>
+        <span class="price">Pendiente</span>
+      </div>
+
+      <div class="equipment-item">
+        <div>
+          <strong>🧾 Impresora de tickets</strong>
+          <small>Impresión de tickets</small>
+        </div>
+        <span class="price">Pendiente</span>
+      </div>
+
+      <div class="equipment-item">
+        <div>
+          <strong>🏪 TPV</strong>
+          <small>Terminal para gestión de ventas</small>
+        </div>
+        <span class="price">Pendiente</span>
+      </div>
+
+      <div class="equipment-item">
+        <div>
+          <strong>💾 Almacenamiento</strong>
+          <small>Almacenamiento de archivos</small>
+        </div>
+        <span class="price">Pendiente</span>
+      </div>
+
+      <div class="equipment-item">
+        <div>
+          <strong>📊 Hoja de cálculo</strong>
+          <small>Gestión y análisis de datos</small>
+        </div>
+        <span class="price">Pendiente</span>
+      </div>
+
+      <div class="equipment-item">
+        <div>
+          <strong>📝 Procesador de textos</strong>
+          <small>Creación de documentos</small>
+        </div>
+        <span class="price">Pendiente</span>
+      </div>
+
+      <div class="equipment-item">
+        <div>
+          <strong>🎨 Programa de edición</strong>
+          <small>Diseño de contenidos</small>
+        </div>
+        <span class="price">Pendiente</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRESUPUESTO -->
+  <section id="presupuesto">
+
+    <div class="budget-box">
+
+      <h3>Presupuesto disponible</h3>
+
+      <div class="budget-number">6.000 €</div>
+
+      <p>
+        Presupuesto destinado a montar el puesto informático de la
+        empresa. El objetivo es seleccionar productos y programas
+        adecuados para desarrollar nuestra actividad profesional.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section id="equipo">
+
+    <div class="section-title">
+      <h2>Nuestro equipo</h2>
+      <p>
+        Una agencia formada por cinco profesionales.
+      </p>
+    </div>
+
+    <div class="team">
+
+      <div class="person">
+        <div class="avatar">1</div>
+        <h3>Dirección</h3>
+        <p>Gestión de la agencia</p>
+      </div>
+
+      <div class="person">
+        <div class="avatar">2</div>
+        <h3>Marketing</h3>
+        <p>Estrategia digital</p>
+      </div>
+
+      <div class="person">
+        <div class="avatar">3</div>
+        <h3>Diseño</h3>
+        <p>Contenido visual</p>
+      </div>
+
+      <div class="person">
+        <div class="avatar">4</div>
+        <h3>Analítica</h3>
+        <p>Análisis de campañas</p>
+      </div>
+
+      <div class="person">
+        <div class="avatar">5</div>
+        <h3>Clientes</h3>
+        <p>Gestión y atención</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+
+    <div class="contact-box">
+
+      <h2>Hablemos</h2>
+
+      <p>
+        ¿Quieres mejorar la comunicación digital de tu empresa?
+        Ponte en contacto con Mailnova.
+      </p>
+
+      <a href="mailto:info@mailnova.es" class="button">
+        Contactar
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 <strong>Mailnova</strong> · Agencia de Email Marketing
+    </p>
+  </footer>
+
+</body>
+</html>
